@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos | Beleza & Elegância</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/img/logo-academia-daniela-silva.png" alt="Academia Daniela Silva">
+            </a>
+            <nav class="nav-desktop">
+                <ul class="nav-desktop">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></li>
+                    <li class="nav-item"><a href="formations.html" class="nav-link">Formação</a></li>
+                    <li class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <h1 class="section-title text-center">Contacte-nos</h1>
+                <div class="about-grid" style="margin-top: 60px;">
+                    <div class="about-content">
+                        <h3>Estamos à sua espera</h3>
+                        <p>Tem alguma dúvida ou gostaria de agendar um tratamento? Preencha o formulário ou utilize um
+                            dos nossos contactos diretos.</p>
+
+                        <div style="margin-top: 40px;">
+                            <p><strong>📍 Morada:</strong> Rua da Elegância, nº 123, Lisboa</p>
+                            <p><strong>📞 Telefone:</strong> +351 123 456 789</p>
+                            <p><strong>✉️ Email:</strong> info@belezapremium.pt</p>
+                        </div>
+
+                        <div class="hours-info">
+                            <span class="icon">🕒</span>
+                            <div>
+                                <strong>Horário</strong>
+                                <p>Segunda a Sábado: 9h às 21h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <!-- Placeholder for a simple contact form -->
+                        <div
+                            style="background: var(--nude); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow);">
+                            <form action="#" onsubmit="return false;">
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Nome</label>
+                                    <input type="text" placeholder="O seu nome"
+                                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);">
+                                </div>
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Email</label>
+                                    <input type="email" placeholder="O seu email"
+                                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);">
+                                </div>
+                                <div style="margin-bottom: 20px;">
+                                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Mensagem</label>
+                                    <textarea rows="4" placeholder="Como podemos ajudar?"
+                                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);"></textarea>
+                                </div>
+                                <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Beleza Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+
+</html>

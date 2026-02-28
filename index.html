@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza & Elegância | Premium Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <span>📞 +351 123 456 789</span>
+            <span>✉️ info@belezapremium.pt</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/img/logo-academia-daniela-silva.PNG" alt="Academia Daniela Silva">
+            </a>
+
+            <nav class="nav-desktop">
+                <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
+                <div class="nav-item has-dropdown">
+                    <a href="formations.html" class="nav-link">Formação</a>
+                    <div class="dropdown">
+                        <a href="course.html" class="dropdown-link">Curso de Estética</a>
+                        <a href="course.html" class="dropdown-link">Curso de Laser</a>
+                        <a href="course.html" class="dropdown-link">Curso de Nutrição</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="nav-mobile">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+            <li><a href="about.html" class="mobile-nav-link">Quem Somos</a></li>
+            <li class="mobile-item has-dropdown">
+                <a href="#" class="mobile-nav-link">Formação ▾</a>
+                <ul class="mobile-submenu">
+                    <li><a href="course.html">Curso de Estética</a></li>
+                    <li><a href="course.html">Curso de Laser</a></li>
+                </ul>
+            </li>
+            <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Desperte a sua <br>beleza interior</h1>
+                    <p class="hero-subtitle">Cuidamos de si com a elegância e o profissionalismo que o seu corpo merece.
+                    </p>
+                    <a href="contact.html" class="btn">Marque o seu horário</a>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-blob"></div>
+                    <!-- Placeholder for Hero Image -->
+                    <div class="image-placeholder hero-img">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800"
+                            alt="Beleza e Bem-estar">
+                    </div>
+                </div>
+            </div>
+            <!-- Floral Watermark SVG -->
+            <svg class="floral-watermark" width="400" height="400" viewBox="0 0 400 400"
+                style="bottom: -50px; left: -50px;">
+                <path d="M100,200 Q150,100 200,200 T300,200" fill="none" stroke="currentColor" stroke-width="1" />
+            </svg>
+        </section>
+
+        <!-- Sobre Nós Section -->
+        <section class="section-padding section-about">
+            <div class="container about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p>Situados no coração de Portugal, somos uma clínica dedicada à estética avançada e ao bem-estar
+                        integral. O nosso compromisso é oferecer tratamentos personalizados com tecnologia de ponta e
+                        uma equipa de excelência.</p>
+                    <div class="hours-info">
+                        <span class="icon">🕒</span>
+                        <div class="hours-text">
+                            <strong>Horário de funcionamento</strong>
+                            <p>Segunda a Sábado: 9h às 21h</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-nude">Mais informações</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
+                        alt="Nossa Clínica" class="rounded-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section-padding section-services" style="background-color: #fafafa;">
+            <div class="container">
+                <h2 class="section-title text-center">A sua beleza é a nossa prioridade</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=400"
+                                alt="Rosto">
+                        </div>
+                        <h3>Tratamentos de Rosto</h3>
+                        <a href="#" class="btn-text">SABER MAIS</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400"
+                                alt="Corpo">
+                        </div>
+                        <h3>Tratamentos de Corpo</h3>
+                        <a href="#" class="btn-text">SABER MAIS</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=400"
+                                alt="Emagrecimento">
+                        </div>
+                        <h3>Emagrecimento</h3>
+                        <a href="#" class="btn-text">SABER MAIS</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&q=80&w=400"
+                                alt="Laser">
+                        </div>
+                        <h3>Laser</h3>
+                        <a href="#" class="btn-text">SABER MAIS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section-padding">
+            <div class="container testimonials-grid">
+                <div class="testimonials-header">
+                    <h2 class="section-title">O que as nossas clientes dizem sobre nós</h2>
+                </div>
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">O atendimento é impecável e os resultados superaram as minhas
+                            expectativas. Recomendo vivamente a todos!</p>
+                        <h4 class="testimonial-name">Maria Silva</h4>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">Um espaço de paz e profissionalismo. Fiz o tratamento de laser e
+                            estou muito satisfeita com o resultado.</p>
+                        <h4 class="testimonial-name">Ana Oliveira</h4>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">A melhor clínica de estética que já visitei. A equipa é maravilhosa
+                            e muito atenciosa.</p>
+                        <h4 class="testimonial-name">Beatriz Costa</h4>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="container text-center">
+                <h2>Estamos aqui por si!</h2>
+                <a href="contact.html" class="btn btn-white">Marque o seu horário</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo footer-logo">BELEZA</div>
+                <p>O seu destino para uma beleza autêntica e revitalizante.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">i</a>
+                    <a href="#" class="social-link">t</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Contactos</h4>
+                <ul class="footer-links">
+                    <li>📞 +351 123 456 789</li>
+                    <li>✉️ info@belezapremium.pt</li>
+                    <li>📍 Rua da Elegância, nº 123, Lisboa</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li class="complaints-badge-placeholder">[Placeholder Livro Reclamações]</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Beleza Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+
+</html>

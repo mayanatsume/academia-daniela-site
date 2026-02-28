@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação | Beleza & Elegância</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <!-- Header (Same as index) -->
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/img/logo-academia-daniela-silva.png" alt="Academia Daniela Silva">
+            </a>
+            <nav class="nav-desktop">
+                <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
+                <div class="nav-item has-dropdown">
+                    <a href="formations.html" class="nav-link">Formação</a>
+                    <div class="dropdown">
+                        <a href="course.html" class="dropdown-link">Curso de Estética</a>
+                        <a href="course.html" class="dropdown-link">Curso de Laser</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
+            </nav>
+            <button class="menu-toggle"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding" style="background: var(--nude);">
+            <div class="container text-center">
+                <h1 class="section-title">A Nossa Formação</h1>
+                <p>Invista no seu futuro com os nossos cursos certificados na área da estética e bem-estar.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="services-grid">
+                    <!-- Course 1 -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=400"
+                                alt="Curso">
+                        </div>
+                        <h3>Curso de Estética Avançada</h3>
+                        <p>Aprenda as técnicas mais recentes do mercado com especialistas.</p>
+                        <a href="course.html" class="btn btn-nude" style="margin-top: 20px;">VER DETALHES</a>
+                    </div>
+                    <!-- Course 2 -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400"
+                                alt="Curso">
+                        </div>
+                        <h3>Curso de Laser Diodo</h3>
+                        <p>Domine a tecnologia de laser para resultados permanentes.</p>
+                        <a href="course.html" class="btn btn-nude" style="margin-top: 20px;">VER DETALHES</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index) -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Beleza Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
