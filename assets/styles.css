@@ -757,7 +757,7 @@ body {
 @media (max-width: 900px) {
     .header::after {
         background-position: left -40px !important;
-        background-size: 520px auto !important;
+        background-size: 220px auto !important;
         /* menor */
         opacity: 0.10 !important;
     }
