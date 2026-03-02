@@ -446,8 +446,23 @@ body {
 }
 
 @media (max-width: 900px) {
+    :root {
+        --header-height: 92px;
+        /* dá espaço ao logo maior */
+    }
+
+    .header {
+        height: var(--header-height);
+    }
+
+    .header .container {
+        align-items: flex-start;
+        padding-top: 10px;
+    }
+
     .brand img {
-        height: 58px;
+        height: 76px;
+        /* maior */
         transform: none;
     }
 }
@@ -642,4 +657,80 @@ body {
 .footer-bottom .dev-link:hover {
     color: #111 !important;
     /* ou var(--text) */
+}
+
+/* ===============================
+   MOBILE MENU: abre para BAIXO
+   =============================== */
+@media (max-width: 900px) {
+
+    /* botão sempre visível */
+    .menu-toggle {
+        position: fixed !important;
+        top: 18px;
+        right: 16px;
+        z-index: 20050 !important;
+    }
+
+    /* painel do menu vira dropdown (não vem da direita) */
+    .nav-mobile {
+        position: fixed !important;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 18px;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        transition: max-height .35s ease, padding .35s ease;
+        z-index: 20040 !important;
+    }
+
+    /* quando abre */
+    body.menu-open .nav-mobile {
+        max-height: calc(100vh - var(--header-height));
+        padding: 20px 18px 26px;
+    }
+}
+
+/* ===============================
+   FOOTER MOBILE FIX
+   =============================== */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-logo img {
+        height: 80px;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        margin-top: 24px;
+    }
+
+    .footer-bottom p {
+        text-align: center;
+        line-height: 1.45;
+        font-size: 14px;
+    }
 }
