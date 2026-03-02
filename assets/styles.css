@@ -734,3 +734,22 @@ body {
         font-size: 14px;
     }
 }
+
+/* Header background: só no MOBILE fica “no cantinho” */
+@media (max-width: 900px) {
+    .header {
+        background-position: left top !important;
+        /* cantinho */
+        background-size: 520px auto !important;
+        /* controla o tamanho */
+        background-repeat: no-repeat !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .footer-logo img {
+        height: 110px;
+        /* aumenta só no mobile (testa 96–130) */
+        width: auto;
+    }
+}
