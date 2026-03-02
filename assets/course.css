@@ -1,0 +1,65 @@
+/* =========================================
+   Accordion / Info Cards
+   ========================================= */
+.info-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.accordion {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    color: var(--gold);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    padding-bottom: 25px;
+}
+
+.icon {
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.accordion-item.active .icon {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .info-cards-row {
+        grid-template-columns: 1fr;
+    }
+}
