@@ -35,7 +35,7 @@
 
 /* ----- HERO watermark (maior e mais forte) ----- */
 .hero-section {
-    --wm-img: url("img/floral-watermark.PNG");
+    --wm-img: url("img/floral-watermark.png");
     /* depois trocas por outro se quiser */
     --wm-size: 1200px auto;
     --wm-opacity: 0.90;
