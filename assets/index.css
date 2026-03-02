@@ -9,7 +9,7 @@
     content: "";
     position: absolute;
     inset: var(--wm-inset, -80px);
-    background-image: var(--wm-img, url("img/floral-watermark.PNG"));
+    background-image: var(--wm-img, url("img/floral-watermark.png"));
     background-repeat: no-repeat;
     background-position: var(--wm-pos, left center);
     background-size: var(--wm-size, 900px auto);
@@ -54,7 +54,7 @@
 
 /* ----- TESTIMONIALS watermark (troca o ficheiro quando tiveres) ----- */
 .testimonials-grid {
-    --wm-img: url("img/floral-watermark-testimonials.PNG");
+    --wm-img: url("img/floral-watermark-testimonials.png");
     --wm-size: 500px auto;
     --wm-opacity: 0.14;
     --wm-pos: left center;
