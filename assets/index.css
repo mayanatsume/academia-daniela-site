@@ -455,3 +455,26 @@
         /* abaixo do botão */
     }
 }
+
+/* MOBILE ONLY: ajustar watermarks (sem mexer no About) */
+@media (max-width: 900px) {
+
+    /* HERO: diminuir o floral-watermark no mobile */
+    .hero-section {
+        --wm-size: 680px auto;
+        /* ↓ menor (testa 600–750) */
+        --wm-inset: -60px;
+        /* menos “espalhado” */
+        --wm-opacity: 0.18;
+        /* opcional: mais suave */
+        --wm-pos: left top;
+        /* opcional: mais “cantinho” */
+    }
+
+    /* TESTIMONIALS: corrigir posição (sem mudar o tamanho) */
+    .testimonials-grid {
+        --wm-pos: center top;
+        /* atrás do título */
+        /* se precisar subir mais: center -80px */
+    }
+}

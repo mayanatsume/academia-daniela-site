@@ -753,21 +753,3 @@ body {
         width: auto;
     }
 }
-
-@media (max-width: 900px) {
-    .header::after {
-        background-position: left -40px !important;
-        background-size: 220px auto !important;
-        /* menor */
-        opacity: 0.10 !important;
-    }
-}
-
-@media (max-width: 900px) {
-    .testimonials-grid {
-        --wm-pos: center top;
-        --wm-inset: -20px;
-        --wm-size: 620px auto;
-        --wm-opacity: 0.16;
-    }
-}
