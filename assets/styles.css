@@ -12,8 +12,8 @@
     --radius-pill: 999px;
 
     --container-max: 1200px;
-    --header-height: 80px;
-    --topbar-height: 40px;
+    --header-height: 190px;
+    --topbar-height: 0px;
 
     --transition: all 0.3s ease;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -172,14 +172,14 @@ main {
     width: auto;
     object-fit: contain;
     display: block;
-    transform: scale(1.40);
+    transform: scale(2.80);
     transform-origin: left center;
 }
 
 /* Header fixo logo abaixo do topbar */
 .header {
     position: fixed;
-    top: var(--topbar-height);
+    top: 0;
     left: 0;
     right: 0;
     height: var(--header-height);
@@ -450,4 +450,196 @@ body {
         height: 58px;
         transform: none;
     }
+}
+
+/* remove underline/barrinha hover nos links do menu */
+.nav-link::after {
+    display: none !important;
+}
+
+.nav-link {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* desliga o topbar (não fica uma barra extra) */
+.topbar {
+    display: none !important;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+}
+
+.header-contact {
+    display: flex;
+    gap: 18px;
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+    width: 620px;
+    /* aumenta a linha */
+}
+
+.header-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    color: var(--text-light);
+}
+
+.header-contact a:hover {
+    color: var(--gold);
+}
+
+.contact-ico {
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.nav-desktop {
+    margin-top: 60px;
+}
+
+@media (max-width:900px) {
+    .header-contact {
+        display: none;
+    }
+}
+
+/* Footer: trocar texto por logo */
+.footer-brand {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo img {
+    height: 78px;
+    /* ajusta: 64–96 */
+    width: auto;
+    display: block;
+}
+
+/* FOOTER: re-equilibrar colunas após trocar texto por logo */
+.footer-grid {
+    align-items: start;
+    /* não estica estranho */
+}
+
+.footer-brand {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* centraliza o logo na coluna */
+}
+
+.footer-logo {
+    display: inline-flex;
+}
+
+/* dá “presença” ao logo */
+.footer-logo img {
+    height: 220px;
+    /* ajusta 80–110 */
+    width: auto;
+    display: block;
+}
+
+/* evita que contactos/links encostem demais na esquerda */
+.footer-col {
+    padding-left: 10px;
+}
+
+/* em telas menores, centraliza tudo */
+@media (max-width: 992px) {
+    .footer-col {
+        padding-left: 0;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-ico {
+    color: var(--gold);
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: inherit;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.complaints-badge img {
+    height: 54px;
+    /* ajusta */
+    width: auto;
+    display: block;
+    margin-top: 8px;
+}
+
+/* espaço entre o título e a lista */
+.footer-title {
+    margin-bottom: 14px;
+    /* “enter” visual */
+}
+
+/* mais espaçamento entre os itens */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* aumenta/diminui aqui */
+}
+
+.footer-links li {
+    line-height: 1.6;
+}
+
+/* faixa dourada full width */
+.footer-bottom {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    padding: 18px 0;
+    margin-top: 40px;
+}
+
+/* texto branco + mais grosso */
+.footer-bottom p {
+    margin: 0;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* link do dev também branco (e hover dourado) */
+.footer-bottom .dev-link {
+    color: #fff !important;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-bottom .dev-link:hover {
+    color: #111 !important;
+    /* ou var(--text) */
 }

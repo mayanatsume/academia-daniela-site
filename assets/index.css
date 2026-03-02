@@ -1,18 +1,64 @@
 /* =========================================
-   Watermark (Home specific parts)
+   Watermark (Home specific parts) — PER SECTION
    ========================================= */
+
+/* base: o ::before usa variáveis que cada secção define */
 .hero-section::before,
 .section-about::before,
 .testimonials-grid::before {
     content: "";
     position: absolute;
-    inset: -80px;
-    background: url("img/floral-watermark.PNG") no-repeat;
-    background-position: left center;
-    background-size: 720px auto;
-    opacity: 0.10;
+    inset: var(--wm-inset, -80px);
+    background-image: var(--wm-img, url("img/floral-watermark.PNG"));
+    background-repeat: no-repeat;
+    background-position: var(--wm-pos, left center);
+    background-size: var(--wm-size, 900px auto);
+    opacity: var(--wm-opacity, 0.18);
+    /* começa mais forte */
     pointer-events: none;
     z-index: 0;
+}
+
+/* garante conteúdo acima do watermark */
+.hero-section,
+.section-about,
+.testimonials-grid {
+    position: relative;
+}
+
+.hero-section>*,
+.section-about>*,
+.testimonials-grid>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* ----- HERO watermark (maior e mais forte) ----- */
+.hero-section {
+    --wm-img: url("img/floral-watermark.PNG");
+    /* depois trocas por outro se quiser */
+    --wm-size: 1200px auto;
+    --wm-opacity: 0.90;
+    --wm-pos: left center;
+    --wm-inset: -140px;
+}
+
+/* ----- ABOUT watermark (troca o ficheiro quando tiveres) ----- */
+.section-about {
+    --wm-img: url("img/floral-watermark-about.PNG");
+    --wm-size: 900px auto;
+    --wm-opacity: 0.16;
+    --wm-pos: left center;
+    --wm-inset: -110px;
+}
+
+/* ----- TESTIMONIALS watermark (troca o ficheiro quando tiveres) ----- */
+.testimonials-grid {
+    --wm-img: url("img/floral-watermark-testimonials.PNG");
+    --wm-size: 500px auto;
+    --wm-opacity: 0.14;
+    --wm-pos: left center;
+    --wm-inset: -110px;
 }
 
 /* garante conteúdo acima do watermark */
@@ -73,11 +119,10 @@
     align-items: center;
 }
 
-/* blob por trás */
 .hero-blob {
     position: absolute;
-    width: 120%;
-    height: 120%;
+    inset: -8% -12% -18% -12%;
+    /* corta mais em baixo */
     background: var(--nude);
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     z-index: 0;
@@ -101,6 +146,7 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     display: block;
+    transform: translateY(14px);
 }
 
 /* =========================================
@@ -146,9 +192,31 @@
     align-items: center;
 }
 
+.about-image {
+    height: 360px;
+    /* menos alto (testa 320–420) */
+}
+
 .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* corta para ficar mais “larga” */
+    object-position: center;
+    /* podes mudar p/ top */
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
+    display: block;
+}
+
+.about-title-icon {
+    width: 80px;
+    /* 32–48 */
+    height: auto;
+    margin-top: -8px;
+    /* ajusta: -4 a -14 */
+    opacity: .95;
+    flex: 0 0 auto;
 }
 
 /* =========================================
@@ -335,12 +403,55 @@
     }
 }
 
-.hero-section::before {
-    inset: -20px;
-}
 
 .hero-blob {
     width: 110%;
     height: 110%;
     max-width: 100vw;
+}
+
+/* CTA banner com imagem esticada (igual exemplo) */
+.cta-banner {
+    background: url("img/cta-banner.png") center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 90px 0;
+    /* altura do banner */
+}
+
+/* overlay para dar contraste no texto */
+.cta-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+    /* ajusta 0.15–0.35 */
+    z-index: 0;
+}
+
+/* garante conteúdo acima do overlay */
+.cta-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* texto branco por cima */
+.cta-banner h2 {
+    color: #fff;
+    margin-bottom: 18px;
+}
+
+/* garante que o X/hambúrguer fica SEMPRE por cima do painel */
+@media (max-width: 900px) {
+    .menu-toggle {
+        position: fixed !important;
+        top: 22px;
+        right: 18px;
+        z-index: 10050 !important;
+    }
+
+    .nav-mobile {
+        z-index: 10040 !important;
+        /* abaixo do botão */
+    }
 }

@@ -12,14 +12,15 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
     <div class="topbar">
         <div class="container">
-            <span>📞 +351 123 456 789</span>
-            <span>✉️ info@belezapremium.pt</span>
+            <span>📞 +351 919 312 518</span>
+            <span>✉️ info@academia-daniela-sila.pt</span>
         </div>
     </div>
 
@@ -29,20 +30,37 @@
                 <img src="assets/img/logo.png" alt="Academia Daniela Silva">
             </a>
 
-            <nav class="nav-desktop">
-                <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
-                <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
-                <div class="nav-item has-dropdown">
-                    <a href="formations.html" class="nav-link">Formação</a>
-                    <div class="dropdown">
-                        <a href="course.html" class="dropdown-link">Curso de Estética</a>
-                        <a href="course.html" class="dropdown-link">Curso de Laser</a>
-                        <a href="course.html" class="dropdown-link">Curso de Nutrição</a>
-                    </div>
+            <div class="header-right">
+                <div class="header-contact">
+                    <a class="contact-link" href="https://wa.me/351919312518" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp contact-ico"></i>
+                        +351 919 312 518 (Chamada para a rede móvel nacional)
+                    </a>
+
+                    <a class="contact-link" href="mailto:info@belezapremium.pt">
+                        <i class="fa-regular fa-envelope contact-ico"></i>
+                        info@belezapremium.pt
+                    </a>
                 </div>
-                <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
-                <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
-            </nav>
+
+                <nav class="nav-desktop">
+                    <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
+                    <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
+
+                    <div class="nav-item has-dropdown">
+                        <a href="formations.html" class="nav-link">Formação</a>
+                        <div class="dropdown">
+                            <a href="course.html" class="dropdown-link">Formação em Estética</a>
+                            <a href="course.html" class="dropdown-link">Formação em Laser</a>
+                            <a href="course.html" class="dropdown-link">Formação em Nutrição</a>
+                            <a href="course.html" class="dropdown-link">Formação em Hifu</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
+                    <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
+                </nav>
+            </div>
 
             <button class="menu-toggle" aria-label="Abrir menu">
                 <span></span>
@@ -59,8 +77,8 @@
             <li class="mobile-item has-dropdown">
                 <a href="#" class="mobile-nav-link">Formação ▾</a>
                 <ul class="mobile-submenu">
-                    <li><a href="course.html">Curso de Estética</a></li>
-                    <li><a href="course.html">Curso de Laser</a></li>
+                    <li><a href="course.html">Formação em Estética</a></li>
+                    <li><a href="course.html">Formação em Laser</a></li>
                 </ul>
             </li>
             <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
@@ -89,10 +107,16 @@
         <section class="section-padding section-about">
             <div class="container about-grid">
                 <div class="about-content">
-                    <h2 class="section-title">Sobre Nós</h2>
+
+                    <div class="about-title-row">
+                        <img class="about-title-icon" src="assets/img/about-icon.png" alt="">
+                        <h2 class="section-title">Sobre Nós</h2>
+                    </div>
+
                     <p>Situados no coração de Portugal, somos uma clínica dedicada à estética avançada e ao bem-estar
                         integral. O nosso compromisso é oferecer tratamentos personalizados com tecnologia de ponta e
                         uma equipa de excelência.</p>
+
                     <div class="hours-info">
                         <span class="icon">🕒</span>
                         <div class="hours-text">
@@ -100,11 +124,12 @@
                             <p>Segunda a Sábado: 9h às 21h</p>
                         </div>
                     </div>
+
                     <a href="about.html" class="btn btn-nude">Mais informações</a>
                 </div>
+
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
-                        alt="Nossa Clínica" class="rounded-img">
+                    <img src="assets/img/about-photo.jpg" alt="Nossa Clínica" class="rounded-img">
                 </div>
             </div>
         </section>
@@ -112,38 +137,40 @@
         <section class="section-padding section-services" style="background-color: #fafafa;">
             <div class="container">
                 <h2 class="section-title text-center">A sua beleza é a nossa prioridade</h2>
+
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=400"
-                                alt="Rosto">
+                            <img src="assets/img/estetica.png" alt="Formação em HIFU">
                         </div>
-                        <h3>Tratamentos de Rosto</h3>
-                        <a href="#" class="btn-text">SABER MAIS</a>
+                        <h3>Formação em Estética</h3>
+                        <a href="course.html" class="btn-text">SABER MAIS</a>
                     </div>
+
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400"
-                                alt="Corpo">
+                            <img src="assets/img/hifu.png" alt="Formação em HIFU">
                         </div>
-                        <h3>Tratamentos de Corpo</h3>
-                        <a href="#" class="btn-text">SABER MAIS</a>
+                        <h3>Formação em HIFU</h3>
+                        <a href="course.html" class="btn-text">SABER MAIS</a>
                     </div>
+
                     <div class="service-card">
                         <div class="service-image">
                             <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=400"
-                                alt="Emagrecimento">
+                                alt="Nutrição">
                         </div>
-                        <h3>Emagrecimento</h3>
-                        <a href="#" class="btn-text">SABER MAIS</a>
+                        <h3>Formação em Nutrição</h3>
+                        <a href="course.html" class="btn-text">SABER MAIS</a>
                     </div>
+
                     <div class="service-card">
                         <div class="service-image">
                             <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&q=80&w=400"
                                 alt="Laser">
                         </div>
-                        <h3>Laser</h3>
-                        <a href="#" class="btn-text">SABER MAIS</a>
+                        <h3>Formação em Depilação a Laser</h3>
+                        <a href="course.html" class="btn-text">SABER MAIS</a>
                     </div>
                 </div>
             </div>
@@ -192,35 +219,54 @@
 
     <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-col">
-                <div class="logo footer-logo">BELEZA</div>
-                <p>O seu destino para uma beleza autêntica e revitalizante.</p>
-                <div class="footer-socials">
-                    <a href="#" class="social-link">f</a>
-                    <a href="#" class="social-link">i</a>
-                    <a href="#" class="social-link">t</a>
-                </div>
+
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/img/logo.png" alt="Academia Daniela Silva">
+                </a>
             </div>
+
             <div class="footer-col">
                 <h4 class="footer-title">Contactos</h4>
                 <ul class="footer-links">
-                    <li>📞 +351 123 456 789</li>
-                    <li>✉️ info@belezapremium.pt</li>
-                    <li>📍 Rua da Elegância, nº 123, Lisboa</li>
+                    <li><i class="fa-brands fa-whatsapp footer-ico"></i> <a href="https://wa.me/351919312518"
+                            target="_blank" rel="noopener">+351 919 312 518</a></li>
+                    <li><i class="fa-regular fa-envelope footer-ico"></i> <a
+                            href="mailto:info@academia-daniela-sila.pt">info@academia-daniela-silva.pt</a></li>
+                    <li>
+                        <i class="fa-solid fa-location-dot footer-ico"></i>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua%20D.%20Afonso%20Henriques%2028%2C%203060-137%20Cantanhede%2C%20Portugal"
+                            target="_blank" rel="noopener">
+                            Rua D. Afonso Henriques - 28, 3060-137 Cantanhede, Portugal
+                        </a>
+                    </li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h4 class="footer-title">Links</h4>
                 <ul class="footer-links">
                     <li><a href="#">Política de Privacidade</a></li>
                     <li><a href="#">Termos e Condições</a></li>
                     <li><a href="#">Cookies</a></li>
-                    <li class="complaints-badge-placeholder">[Livro Reclamações]</li>
+                    <li class="complaints-badge">
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/img/livro-reclamacoes.png" alt="Livro de Reclamações">
+                        </a>
+                    </li>
                 </ul>
             </div>
+
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2026 Beleza Premium. Todos os direitos reservados.</p>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>
+                    © 2026 | Academia Daniela Silva | Todos os Direitos Reservados |
+                    Desenvolvido por
+                    <a href="https://teusite.com" target="_blank" class="dev-link">SG Web Atelier</a>
+                </p>
+            </div>
         </div>
     </footer>
 
