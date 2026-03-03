@@ -4,76 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Detalhe | Formação Premium</title>
+    <title>Curso de HIFU | Academia Daniela Silva</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/course.css">
 </head>
 
-<body>
+<body class="course-page">
+
+    <div class="topbar">
+        <div class="container">
+            <span>📞 +351 919 312 518</span>
+            <span>✉️ info@academia-daniela-silva.pt</span>
+        </div>
+    </div>
 
     <header class="header">
         <div class="container">
             <a class="brand" href="index.html">
                 <img src="assets/img/logo.png" alt="Academia Daniela Silva">
             </a>
-            <nav class="nav-desktop">
-                <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
-                <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
-                <div class="nav-item"><a href="formations.html" class="nav-link">Formação</a></div>
-                <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
-                <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
-            </nav>
-            <button class="menu-toggle"><span></span><span></span><span></span></button>
-        </div>
+
+            <div class="header-right">
+                <div class="header-contact">
+                    <a class="contact-link" href="https://wa.me/351919312518" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp contact-ico"></i>
+                        +351 919 312 518 (Chamada para a rede móvel nacional)
+                    </a>
+
+                    <a class="contact-link" href="mailto:info@belezapremium.pt">
+                        <i class="fa-regular fa-envelope contact-ico"></i>
+                        info@belezapremium.pt
+                    </a>
+                </div>
+
+                <nav class="nav-desktop">
+                    <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
+                    <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
+
+                    <div class="nav-item has-dropdown">
+                        <a href="formations.html" class="nav-link">Formação</a>
+                        <div class="dropdown">
+                            <a href="course.html" class="dropdown-link">Formação em Estética</a>
+                            <a href="course.html" class="dropdown-link">Formação em Laser</a>
+                            <a href="course.html" class="dropdown-link">Formação em Nutrição</a>
+                            <a href="course.html" class="dropdown-link">Formação em Hifu</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
+                    <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
+                </nav>
+
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
     </header>
 
-    <main>
-        <!-- Course Intro -->
-        <section class="section-padding">
-            <div class="container about-grid">
-                <div class="about-content">
-                    <h1 class="section-title">O que precisa de saber sobre o curso?</h1>
-                    <p>Este curso foi desenhado para profissionais que procuram elevar o seu padrão de serviço. Com uma
-                        componente prática forte, garantimos que termina a formação pronto para o mercado de trabalho.
-                    </p>
-                    <div style="margin-top: 30px; display: flex; gap: 20px;">
-                        <a href="#" class="btn">QUERO INVESTIR NA MINHA FORMAÇÃO!</a>
+    <nav class="nav-mobile">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+            <li><a href="about.html" class="mobile-nav-link">Quem Somos</a></li>
+            <li class="mobile-item has-dropdown">
+                <a href="#" class="mobile-nav-link">Formação ▾</a>
+                <ul class="mobile-submenu">
+                    <li><a href="course.html">Formação em Estética</a></li>
+                    <li><a href="course.html">Formação em Laser</a></li>
+                    <li><a href="course.html">Formação em Nutrição</a></li>
+                    <li><a href="course.html">Formação em HIFU</a></li>
+                </ul>
+            </li>
+            <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <main class="course-page">
+
+        <section class="course-section">
+            <div class="course-wrap">
+                <div id="inscricao" class="course-hero">
+                    <div class="course-hero__bg" style="background-image:url('assets/img/hero12.png');"></div>
+                    <div class="course-hero__overlay"></div>
+
+                    <div class="course-hero__content">
+                        <div class="hero-text-side">
+                            <h1>Curso de HIFU</h1>
+                            <p class="course-kicker">Domine as tecnologias mais avançadas do mercado e eleve o seu
+                                padrão de serviço. Formação intensiva focada na prática e resultados reais.</p>
+                        </div>
+
+                        <form class="course-form">
+                            <h3>Quero me inscrever!</h3>
+                            <p>Preencha os dados e entraremos em contacto.</p>
+
+                            <div class="field">
+                                <input type="text" placeholder="Nome Completo" required>
+                                <input type="email" placeholder="E-mail" required>
+                                <input type="tel" placeholder="WhatsApp" required>
+                                <button class="btn btn-full" type="submit">QUERO INSCREVER-ME!</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
-                        alt="Sobre o Curso" class="rounded-img">
+            </div>
+        </section>
+        <section class="course-section course-know" style="background:#140b09;">
+            <div class="course-wrap">
+                <div class="know-grid">
+                    <div class="know-text">
+                        <h2 class="know-title">O que precisa de saber sobre o curso?</h2>
+                        <p>
+                            A formação em HIFU (Ultrassom Focalizado de Alta Intensidade) vai muito além da simples
+                            aplicação do equipamento. Com a duração de 8 horas, este curso oferece uma abordagem
+                            completa que integra conhecimento técnico, avaliação personalizada e definição de protocolos
+                            seguros e eficazes.
+                        </p>
+                        <p>
+                            Ao longo da formação, serão abordados os fundamentos da tecnologia HIFU, os diferentes tipos
+                            de
+                            cartuchos e profundidades de atuação, bem como as indicações e contraindicações do
+                            tratamento.
+                            O objetivo é capacitar os formandos para realizar procedimentos faciais e corporais com
+                            segurança,
+                            precisão e resultados visíveis.
+                        </p>
+                    </div>
+
+                    <div class="know-media">
+                        <img src="assets/img/hifu.png" alt="Aparatologia" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="course-section course-includes">
+            <div class="course-wrap">
+                <div class="two-col-grid">
+                    <div class="include-side">
+                        <h2 class="section-title">O que inclui o curso?</h2>
+                        <ul class="check-list">
+                            <li><i class="fa-solid fa-check"></i> Formação Intensiva de 8h (teórica e prática)</li>
+                            <li><i class="fa-solid fa-check"></i> Manual PDF e fichas de apoio</li>
+                            <li><i class="fa-solid fa-check"></i> Kit Exclusivo (creme + bloco + caneta)</li>
+                            <li><i class="fa-solid fa-check"></i> Coffee Break</li>
+                        </ul>
+                    </div>
+                    <div class="price-side">
+                        <div class="price-card highlight-card">
+                            <span class="price-label">Preço de Lançamento</span>
+                            <div class="price-value">195€</div>
+                            <p class="price-info">IVA incluído à taxa legal</p>
+                            <hr>
+                            <ul class="price-details">
+                                <li>50€ de inscrição + restante até 5 dias antes do início</li>
+                                <li>Número máximo de formandos: 8</li>
+                            </ul>
+                            <a href="#inscricao" class="btn btn-full">QUERO INSCREVER-ME JÁ!</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Info Cards Row -->
-        <section class="section-padding" style="background: var(--nude);">
-            <div class="container info-cards-row">
-                <div class="info-card">
-                    <h4>Próximas datas</h4>
-                    <p><del>ESGOTADO 19 de Fevereiro</del></p>
-                    <p><strong>17 de Março</strong></p>
-                </div>
-                <div class="info-card">
-                    <h4>Carga Horária</h4>
-                    <p>8 Horas</p>
-                </div>
-                <div class="info-card">
-                    <h4>Modalidade</h4>
-                    <p>Presencial</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Accordion Section -->
-        <section class="section-padding">
-            <div class="container">
+        <section class="course-section">
+            <div class="course-wrap">
                 <h2 class="section-title text-center">O que vai aprender?</h2>
                 <div class="accordion" style="max-width: 800px; margin: 40px auto 0;">
                     <div class="accordion-item">
@@ -103,35 +205,112 @@
                             <p>Normas de higiene, segurança no trabalho e cuidados pós-tratamento.</p>
                         </div>
                     </div>
-                    <!-- Add more modules as needed -->
                 </div>
             </div>
         </section>
 
-        <!-- Saídas Profissionais -->
-        <section class="section-padding" style="background: #fafafa;">
-            <div class="container">
-                <h2 class="section-title text-center">Saídas Profissionais</h2>
-                <div class="services-grid">
-                    <div class="service-card large">
+        <section class="course-section course-cert">
+            <div class="course-wrap">
+                <h2 class="section-title text-center">Certificação</h2>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="assets/img/sigo.jpg" alt="SIGO">
+                    </div>
+                    <div class="cert-card">
+                        <img src="assets/img/passquali.jpg" alt="Passaporte Qualifica">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section" style="background-color: #fafafa;">
+            <div class="course-wrap">
+                <div class="trainer-grid">
+                    <div class="trainer-photo">
+                        <img src="assets/img/dani.jpg" alt="Daniela Silva">
+                    </div>
+                    <div class="trainer-info">
+                        <h2 class="section-title">Quem é a Formadora?</h2>
+                        <div class="trainer-text">
+                            <p>Com mais de 10 anos de experiência clínica, a Daniela Silva dedica-se a capacitar novos
+                                profissionais com as técnicas que geram resultados reais.</p>
+                            <p>Cada formação é desenhada para ser prática, objetiva e segura, garantindo que sai daqui
+                                com total confiança para aplicar o que aprendeu.</p>
+                        </div>
+                        <a class="btn" href="#inscricao">QUERO INSCREVER-ME!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section course-outs">
+            <div class="course-wrap">
+                <div class="outs-head">
+                    <h2 class="section-title">Saídas Profissionais</h2>
+                    <span class="outs-monogram"></span>
+                </div>
+
+                <div class="outs-grid">
+                    <div class="outs-card">
                         <h3>Clínicas de Estética</h3>
                         <p>Oportunidades em centros de alta performance e bem-estar.</p>
                     </div>
-                    <div class="service-card large">
+                    <div class="outs-card">
                         <h3>Trabalho Independente</h3>
                         <p>Capacidade para abrir o seu próprio negócio de sucesso.</p>
                     </div>
+                    <div class="outs-card">
+                        <h3>Spas e Resorts</h3>
+                        <p>Integração em equipas de bem-estar em ambientes de luxo.</p>
+                    </div>
                 </div>
-                <div class="text-center" style="margin-top: 60px;">
-                    <a href="#" class="btn btn-wine-hover">QUERO INSCREVER-ME!</a>
+
+                <div style="margin-top:18px">
+                    <a class="btn" href="#inscricao">QUERO INSCREVER-ME!</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2026 Beleza Premium. Todos os direitos reservados.</p>
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/img/logo.png" alt="Academia Daniela Silva">
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contactos</h4>
+                <ul class="footer-links">
+                    <li><i class="fa-brands fa-whatsapp footer-ico"></i> <a href="https://wa.me/351919312518"
+                            target="_blank" rel="noopener">+351 919 312 518</a></li>
+                    <li><i class="fa-regular fa-envelope footer-ico"></i> <a
+                            href="mailto:info@academia-daniela-silva.pt">info@academia-daniela-silva.pt</a></li>
+                    <li><i class="fa-solid fa-location-dot footer-ico"></i> <span>Cantanhede, Coimbra - Portugal</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li class="complaints-badge">
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/img/livro-reclamacoes.png" alt="Livro de Reclamações">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 | Academia Daniela Silva | Desenvolvido por <a href="#" class="dev-link">SG Web Atelier</a>
+                </p>
+            </div>
         </div>
     </footer>
 

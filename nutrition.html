@@ -11,27 +11,83 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+
+    <div class="topbar">
+        <div class="container">
+            <span>📞 +351 919 312 518</span>
+            <span>✉️ info@academia-daniela-sila.pt</span>
+        </div>
+    </div>
 
     <header class="header">
         <div class="container">
             <a class="brand" href="index.html">
                 <img src="assets/img/logo.png" alt="Academia Daniela Silva">
             </a>
-            <nav class="nav-desktop">
-                <ul class="nav-desktop">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></li>
-                    <li class="nav-item"><a href="formations.html" class="nav-link">Formação</a></li>
-                    <li class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle"><span></span><span></span><span></span></button>
+
+            <div class="header-right">
+                <div class="header-contact">
+                    <a class="contact-link" href="https://wa.me/351919312518" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp contact-ico"></i>
+                        +351 919 312 518 (Chamada para a rede móvel nacional)
+                    </a>
+
+                    <a class="contact-link" href="mailto:info@belezapremium.pt">
+                        <i class="fa-regular fa-envelope contact-ico"></i>
+                        info@belezapremium.pt
+                    </a>
+                </div>
+
+                <nav class="nav-desktop">
+                    <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
+                    <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
+
+                    <div class="nav-item has-dropdown">
+                        <a href="formations.html" class="nav-link">Formação</a>
+                        <div class="dropdown">
+                            <a href="course.html" class="dropdown-link">Formação em Estética</a>
+                            <a href="course.html" class="dropdown-link">Formação em Laser</a>
+                            <a href="course.html" class="dropdown-link">Formação em Nutrição</a>
+                            <a href="course.html" class="dropdown-link">Formação em Hifu</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
+                    <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
+                </nav>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <nav class="nav-mobile">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+            <li><a href="about.html" class="mobile-nav-link">Quem Somos</a></li>
+            <li class="mobile-item has-dropdown">
+                <a href="#" class="mobile-nav-link">Formação ▾</a>
+                <ul class="mobile-submenu">
+                    <ul class="mobile-submenu">
+                        <li><a href="course.html">Formação em Estética</a></li>
+                        <li><a href="course.html">Formação em Laser</a></li>
+                        <li><a href="course.html">Formação em Nutrição</a></li>
+                        <li><a href="course.html">Formação em HIFU</a></li>
+                    </ul>
+                </ul>
+            </li>
+            <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contactos</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="section-padding">

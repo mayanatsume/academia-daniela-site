@@ -465,7 +465,7 @@
         /* ↓ menor (testa 600–750) */
         --wm-inset: -60px;
         /* menos “espalhado” */
-        --wm-opacity: 0.26;
+        --wm-opacity: 0.30;
         /* opcional: mais suave */
         --wm-pos: left top;
         /* opcional: mais “cantinho” */

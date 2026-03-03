@@ -63,3 +63,839 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   COURSE PAGE — layout fix
+   (sem mexer no styles.css)
+========================= */
+
+:root {
+    --course-max: 1100px;
+    --course-pad: clamp(18px, 3vw, 42px);
+    --course-radius: 22px;
+    --course-border: rgba(180, 140, 70, .35);
+    --course-shadow: 0 12px 28px rgba(0, 0, 0, .10);
+    --course-text: #2a1e1a;
+    --course-muted: rgba(42, 30, 26, .72);
+    --course-bg: #ffffff;
+    --course-soft: #faf7f2;
+}
+
+/* segurança geral */
+.course-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.course-page .container {
+    max-width: var(--course-max);
+}
+
+/* seção base */
+.course-section {
+    padding: var(--course-pad) 0;
+}
+
+.course-wrap {
+    max-width: var(--course-max);
+    margin: 0 auto;
+    padding: 0 var(--course-pad);
+}
+
+/* fundo branco + dourado clean */
+.course-page {
+    background:
+        radial-gradient(900px 420px at 12% 10%, rgba(212, 170, 92, .18), transparent 60%),
+        radial-gradient(900px 420px at 90% 22%, rgba(212, 170, 92, .12), transparent 60%),
+        linear-gradient(180deg, #fff, #fff);
+    color: var(--course-text);
+}
+
+/* TITLES */
+.course-page h1,
+.course-page h2 {
+    letter-spacing: -0.02em;
+}
+
+.course-kicker {
+    color: var(--course-muted);
+    font-weight: 500;
+    margin-top: 8px;
+    line-height: 1.55;
+}
+
+/* =========================
+   HERO + FORM (inscrição)
+========================= */
+.course-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--course-radius);
+    box-shadow: var(--course-shadow);
+    border: 1px solid var(--course-border);
+    background: #111;
+    min-height: 360px;
+}
+
+.course-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05) contrast(1.05);
+    transform: scale(1.02);
+}
+
+.course-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(10, 10, 10, .78), rgba(10, 10, 10, .20) 55%, rgba(10, 10, 10, .05)),
+        linear-gradient(180deg, rgba(0, 0, 0, .30), rgba(0, 0, 0, .45));
+}
+
+.course-hero__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: clamp(18px, 3vw, 34px);
+    padding: clamp(22px, 4vw, 44px);
+    align-items: start;
+}
+
+.course-hero h1 {
+    color: #f5d7c8;
+    /* rosé/champagne da tua paleta */
+    font-size: clamp(28px, 4vw, 54px);
+    line-height: 1.05;
+    margin: 0;
+}
+
+.course-hero p {
+    color: rgba(255, 255, 255, .92);
+}
+
+.course-form {
+    background: rgba(255, 255, 255, .92);
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 18px;
+    padding: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.course-form h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #2a1e1a;
+}
+
+.course-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.course-form input {
+    width: 100%;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(42, 30, 26, .18);
+    padding: 0 14px;
+    font: inherit;
+    outline: none;
+    background: #fff;
+}
+
+.course-form input:focus {
+    border-color: rgba(180, 140, 70, .65);
+    box-shadow: 0 0 0 4px rgba(180, 140, 70, .15);
+}
+
+.course-form .btn {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 999px;
+}
+
+/* mobile hero */
+@media (max-width: 900px) {
+    .course-hero__content {
+        grid-template-columns: 1fr;
+    }
+
+    .course-hero {
+        min-height: 520px;
+    }
+
+    .course-hero__overlay {
+        background:
+            linear-gradient(180deg, rgba(10, 10, 10, .78), rgba(10, 10, 10, .45)),
+            linear-gradient(180deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .55));
+    }
+}
+
+/* =========================
+   CERTIFICAÇÃO
+========================= */
+.course-cert {
+    margin-top: clamp(18px, 3vw, 30px);
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.cert-card {
+    background: #fff;
+    border: 1px solid var(--course-border);
+    border-radius: 18px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .06);
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.cert-card img {
+    max-height: 78px;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   INCLUI + PREÇO
+========================= */
+.course-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.course-panel {
+    background: #fff;
+    border: 1px solid var(--course-border);
+    border-radius: var(--course-radius);
+    box-shadow: var(--course-shadow);
+    padding: 22px;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+    color: var(--course-muted);
+}
+
+.course-list strong {
+    color: var(--course-text);
+}
+
+.price-title {
+    color: #b46b2a;
+    /* “dourado queimado” */
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+}
+
+.price-value {
+    font-size: 56px;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin: 8px 0 6px;
+    color: #1b1310;
+}
+
+.price-meta {
+    text-align: center;
+    color: rgba(42, 30, 26, .70);
+    line-height: 1.6;
+    margin-top: 6px;
+}
+
+.price-cta {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .course-two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   FORMADORA
+========================= */
+.trainer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.trainer-photo {
+    border-radius: var(--course-radius);
+    overflow: hidden;
+    border: 1px solid var(--course-border);
+    box-shadow: var(--course-shadow);
+    background: #fff;
+}
+
+.trainer-photo img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+.trainer-text {
+    color: var(--course-muted);
+    line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+    .trainer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trainer-photo img {
+        height: 320px;
+    }
+}
+
+/* ===== FIX: logo do header gigante (course page) ===== */
+.course-page .header .brand img {
+    width: auto !important;
+    height: 52px !important;
+    /* ajusta: 48–60 */
+    max-width: 180px !important;
+}
+
+@media (max-width: 900px) {
+    .course-page .header .brand img {
+        height: 46px !important;
+        max-width: 160px !important;
+    }
+}
+
+/* garante que o course.css não interfere no topo */
+.course-page .topbar img,
+.course-page .header img {
+    max-width: none;
+}
+
+/* =========================
+   2) O QUE PRECISA SABER
+========================= */
+.course-know {
+    color: #fff;
+    background:
+        radial-gradient(900px 420px at 12% 10%, rgba(212, 170, 92, .18), transparent 60%),
+        radial-gradient(900px 420px at 85% 30%, rgba(212, 170, 92, .10), transparent 60%),
+        #140b09;
+}
+
+.know-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 22px;
+    align-items: center;
+}
+
+.know-title {
+    color: #f5d7c8;
+    font-size: clamp(26px, 3.2vw, 44px);
+    line-height: 1.1;
+    margin: 0 0 14px;
+}
+
+.know-text p {
+    color: rgba(255, 255, 255, .88);
+    line-height: 1.75;
+    margin: 0 0 12px;
+}
+
+.know-media {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 170, 92, .28);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+}
+
+.know-media img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .know-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .know-media img {
+        height: 320px;
+    }
+}
+
+/* =========================
+   3) O QUE INCLUI — CARD + HOVER LINHA DOURADA
+========================= */
+.course-includes {
+    background:
+        radial-gradient(700px 320px at 15% 20%, rgba(212, 170, 92, .14), transparent 60%),
+        radial-gradient(700px 320px at 85% 60%, rgba(212, 170, 92, .10), transparent 60%),
+        #fff;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .two-col-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.include-side,
+.price-card {
+    background: rgba(255, 255, 255, .92);
+    border: 1px solid rgba(180, 140, 70, .30);
+    border-radius: 24px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .10);
+}
+
+.include-side {
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* “florzinha/forma dourada” de fundo */
+.include-side::before {
+    content: "";
+    position: absolute;
+    inset: -40px -40px auto auto;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle at 35% 35%, rgba(212, 170, 92, .35), transparent 60%);
+    opacity: .45;
+    pointer-events: none;
+    transform: rotate(18deg);
+}
+
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: rgba(42, 30, 26, .82);
+}
+
+.check-list i {
+    color: rgba(180, 140, 70, .95);
+    margin-right: 10px;
+}
+
+.price-side .price-card {
+    padding: 26px;
+}
+
+.price-label {
+    display: block;
+    text-align: center;
+    color: #b46b2a;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.price-value {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 56px;
+    margin: 6px 0;
+    color: #1b1310;
+}
+
+.price-info {
+    text-align: center;
+    color: rgba(42, 30, 26, .65);
+    margin: 0 0 10px;
+}
+
+.price-details {
+    margin: 12px 0 18px;
+    color: rgba(42, 30, 26, .78);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* =========================
+   4) FORMADORA — BG FLOR DOURADA
+========================= */
+.course-page .trainer-grid {
+    position: relative;
+    background: #fff;
+    border-radius: 26px;
+    padding: 18px;
+}
+
+.course-page .trainer-grid::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 480px;
+    height: 480px;
+    background: url("img/formadora-flower.png") no-repeat center/contain;
+    opacity: .12;
+    pointer-events: none;
+    filter: saturate(1.05);
+}
+
+@media (max-width: 900px) {
+    .course-page .trainer-grid::before {
+        width: 220px;
+        height: 220px;
+        opacity: .10;
+    }
+}
+
+/* =========================
+   5) SAÍDAS — CARDS + MONOGRAMA
+========================= */
+.course-outs {
+    background:
+        radial-gradient(700px 320px at 15% 20%, rgba(212, 170, 92, .10), transparent 60%),
+        #fff;
+}
+
+.outs-head {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.outs-monogram {
+    font-family: "Playfair Display", serif;
+    font-size: 64px;
+    line-height: 1;
+    color: rgba(180, 140, 70, .55);
+    letter-spacing: -0.04em;
+    transform: translateY(6px);
+}
+
+/* cards */
+.outs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.outs-card {
+    background: #fff;
+    border: 1px solid rgba(180, 140, 70, .30);
+    border-radius: 20px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, .08);
+    padding: 18px;
+}
+
+.outs-card h3 {
+    margin: 0 0 6px;
+}
+
+.outs-card p {
+    margin: 0;
+    color: rgba(42, 30, 26, .72);
+    line-height: 1.6;
+}
+
+
+@media (max-width: 900px) {
+    .outs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .outs-monogram {
+        font-size: 52px;
+    }
+}
+
+/* =========================
+   PATCH — includes cards (tamanho/hover/botão)
+========================= */
+
+/* 1) 2 cards com mesma altura */
+.course-includes .two-col-grid {
+    align-items: stretch;
+}
+
+.course-includes .include-side,
+.course-includes .price-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-includes .price-side .price-card {
+    justify-content: space-between;
+}
+
+/* 2) underline dourado por item */
+.course-includes .check-list li {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.course-includes .check-list li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212, 170, 92, .95), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .28s ease;
+    opacity: .9;
+}
+
+.course-includes .check-list li:hover::after {
+    transform: scaleX(1);
+}
+
+/* 3) CTA centralizado */
+.course-includes .price-card .btn,
+.course-includes .price-card .btn-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.1;
+}
+
+/* 4) mobile safe */
+@media (max-width: 900px) {
+
+    .course-includes .include-side,
+    .course-includes .price-card {
+        padding: 20px;
+    }
+
+    .course-includes .price-card .btn-full {
+        width: 100%;
+    }
+}
+
+/* ===== Saídas Profissionais: centralizar título e botão ===== */
+.course-outs .section-title {
+    text-align: center;
+}
+
+.course-outs .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-outs .course-wrap>div:last-child {
+    text-align: center;
+}
+
+/* ===== Saídas Profissionais: centralizar título (à prova de tudo) ===== */
+.course-outs h2,
+.course-outs .outs-head,
+.course-outs .outs-head .section-title {
+    text-align: center !important;
+    justify-content: center;
+}
+
+.course-outs .outs-head {
+    width: 100%;
+}
+
+/* ===== Formadora: botão mais embaixo e centralizado ===== */
+.course-page .trainer-info .btn {
+    margin-top: 22px;
+    /* afasta do texto */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* centraliza o botão dentro da coluna da direita */
+.course-page .trainer-info {
+    text-align: center;
+}
+
+/* mas mantém o texto alinhado à esquerda (fica mais premium) */
+.course-page .trainer-info .section-title,
+.course-page .trainer-info .trainer-text {
+    text-align: left;
+}
+
+/* ===== Certificação: título centralizado ===== */
+.course-cert .section-title {
+    text-align: center;
+}
+
+.course-cert h2 {
+    text-align: center;
+}
+
+/* ===== Certificação: cards menos largos e centrados ===== */
+.course-cert .cert-grid {
+    justify-content: center;
+    gap: 8px;
+}
+
+.course-cert .cert-card {
+    max-width: 260px;
+    /* ajusta: 380–520 */
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .course-cert .cert-card {
+        max-width: 520px;
+    }
+}
+
+/* ===== Certificação: diminuir distância entre os 2 cards ===== */
+.course-cert .cert-grid {
+    grid-template-columns: repeat(2, auto) !important;
+    /* em vez de 1fr 1fr */
+    justify-content: center !important;
+    gap: 22px !important;
+    /* ajusta: 16–28 */
+}
+
+/* ===== Form no hero: texto "Preencha os dados..." em preto ===== */
+.course-hero .course-form p {
+    color: #2a1e1a;
+    /* preto/marrom escuro */
+}
+
+/* ===== Course page: footer menos alto ===== */
+.course-page .footer {
+    padding-top: 28px;
+    padding-bottom: 18px;
+}
+
+.course-page .footer-grid {
+    row-gap: 18px;
+}
+
+
+/* logo maior de novo */
+.course-page .footer-logo img {
+    max-height: 160px;
+    /* ajusta: 130–160 */
+    width: auto;
+}
+
+/* faixa dourada (footer-bottom) mais fininha */
+.course-page .footer-bottom {
+    padding: 10px 0;
+}
+
+/* ===== Footer: diminuir imagem do Livro de Reclamações ===== */
+.course-page .complaints-badge img {
+    width: 110px;
+    /* ajusta: 120–180 */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== FINAL MOBILE PASS (antes do GitHub) ===== */
+@media (max-width: 600px) {
+    .course-wrap {
+        padding: 0 16px;
+    }
+
+    .course-section {
+        padding: 22px 0;
+    }
+
+    .course-hero {
+        border-radius: 18px;
+        min-height: 0;
+    }
+
+    .course-hero__content {
+        padding: 18px;
+    }
+
+    .course-hero h1 {
+        font-size: 30px;
+    }
+
+    .course-form {
+        padding: 14px;
+    }
+
+    .course-form input {
+        height: 46px;
+    }
+
+    .know-media img {
+        height: 280px;
+    }
+
+    .trainer-photo img {
+        height: 280px;
+    }
+
+    /* certificações stack com bom espaçamento */
+    .course-cert .cert-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .course-cert .cert-card {
+        max-width: 520px;
+    }
+
+    /* footer mais compacto no mobile */
+    .course-page .footer {
+        padding-top: 14px;
+        padding-bottom: 10px;
+    }
+
+    .course-page .footer-grid {
+        row-gap: 10px;
+    }
+
+    .course-page .footer-bottom {
+        padding: 8px 0;
+    }
+}
