@@ -1074,7 +1074,7 @@
 
 @media (max-width: 900px) {
     .course-page .header .brand img {
-        height: 64px !important;
+        height: 140px !important;
         /* ajusta: 56–72 */
         max-width: 220px !important;
     }
