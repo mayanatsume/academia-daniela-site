@@ -446,24 +446,40 @@ body {
 }
 
 @media (max-width: 900px) {
+
+    /* 1) dá altura real pro logo “cair” sem cortar */
     :root {
-        --header-height: 92px;
-        /* dá espaço ao logo maior */
+        --header-height: 150px;
+        /* tem que ser >= logo (140) + folga */
+        --topbar-height: 40px;
+        /* não mexe */
     }
 
     .header {
         height: var(--header-height);
+        overflow: visible;
+        /* não corta o topo do logo */
     }
 
-    .header .container {
-        align-items: flex-start;
-        padding-top: 10px;
-    }
-
+    /* logo grande */
     .brand img {
-        height: 140px;
-        /* maior */
+        height: 140px !important;
+        width: auto;
         transform: none;
+        margin-top: -6px;
+        /* ajusta: -2 a -12 (só micro ajuste) */
+    }
+
+    /* 2) compensa a altura maior do header para não criar “buraco” */
+    main {
+        padding-top: calc(var(--topbar-height) + 92px + 10px) !important;
+        /* 92px é a “altura visual” que tu queres sentir no topo.
+       ajusta 82–105 se precisares. */
+    }
+
+    /* 3) hide no scroll continua correto (topbar + header real) */
+    .header.is-hidden {
+        transform: translateY(calc(-1 * (var(--header-height) + var(--topbar-height)))) !important;
     }
 }
 
