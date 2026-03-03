@@ -769,3 +769,17 @@ body {
         width: auto;
     }
 }
+
+/* MOBILE: menos espaço entre secções */
+@media (max-width: 900px) {
+    .section-padding {
+        padding: 56px 0;
+        /* era 100px 0 */
+    }
+
+    /* hero já tem padding próprio — reduz só um pouco se precisar */
+    .hero-section {
+        padding: 110px 0 60px;
+        /* ajusta se quiser */
+    }
+}
