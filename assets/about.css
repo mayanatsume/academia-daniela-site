@@ -1,0 +1,248 @@
+/* =========================================
+   ABOUT PAGE (about.html) — page CSS only
+========================================= */
+
+.about-page {
+    background: #fff;
+}
+
+/* Top title "Sobre Nós" (se tiveres uma hero/heading) */
+.about-page .page-title {
+    text-align: center;
+}
+
+/* Ajustar a primeira secção (A Nossa História) para imagem ESQUERDA + texto DIREITA
+   No teu HTML atual a ordem é texto depois imagem.
+   Vamos inverter visualmente com CSS sem mexer no HTML.
+*/
+.about-page .about-grid {
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    gap: 34px;
+    align-items: center;
+}
+
+/* Inverter ordem no desktop: imagem à esquerda */
+.about-page .about-image {
+    order: 1;
+}
+
+.about-page .about-content {
+    order: 2;
+}
+
+/* Efeito “desliza um pouco pra baixo” ao abrir a página */
+@keyframes aboutDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(12px);
+    }
+}
+
+.about-page .about-content {
+    animation: aboutDrop .7s ease both;
+}
+
+/* Imagem bonita */
+.about-page .rounded-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .12);
+    border: 1px solid rgba(180, 140, 70, .22);
+}
+
+/* Valores: manter grid premium sem precisar inline style */
+.about-page .services-grid {
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .about-page .services-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================
+   A NOSSA EQUIPA
+========================= */
+.about-team {
+    background: #f6e9e6;
+    /* nude pastel */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 26px;
+}
+
+.team-card {
+    background: #fff;
+    border: 1px solid rgba(180, 140, 70, .24);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .10);
+}
+
+.team-photo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.team-info {
+    padding: 18px;
+    text-align: center;
+}
+
+.team-info h3 {
+    margin: 4px 0 8px;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    color: #5a1f18;
+    /* vinho */
+}
+
+/* ===== Equipa: dourado mostarda em vez de vinho ===== */
+.team-info h3 {
+    color: #b8842b !important;
+    /* mostarda/dourado */
+}
+
+/* =========================
+   CTA FINAL (faixa com imagem)
+========================= */
+.about-cta {
+    position: relative;
+    min-height: 190px;
+    overflow: hidden;
+}
+
+.about-cta__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+}
+
+.about-cta__overlay {
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .18)),
+        radial-gradient(700px 280px at 20% 30%, rgba(180, 140, 70, .12), transparent 60%) !important;
+}
+
+.about-cta__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 46px 0;
+}
+
+.about-cta__content h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(28px, 4vw, 44px);
+}
+
+.about-cta__btn {
+    background: rgba(255, 255, 255, .95);
+    color: #5a1f18;
+    border: 1px solid rgba(255, 255, 255, .6);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .about-page .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* no mobile queremos imagem antes do texto */
+    .about-page .about-image {
+        order: 1;
+    }
+
+    .about-page .about-content {
+        order: 2;
+    }
+
+    .about-page .rounded-img {
+        height: 320px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta__content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 34px 0;
+    }
+
+    .about-cta__btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ===== Valores: transformar em cards ===== */
+.about-page .values-section {
+    background: #f6e9e6;
+    /* nude pastel */
+}
+
+.about-page .values-section .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    margin-top: 22px;
+}
+
+.about-page .values-section .service-card {
+    background: #fff !important;
+    border: 1px solid rgba(180, 140, 70, .22) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .10) !important;
+    padding: 20px !important;
+    text-align: left;
+}
+
+.about-page .values-section .service-card h3 {
+    margin: 0 0 8px;
+    color: #2a1e1a;
+}
+
+.about-page .values-section .service-card p {
+    margin: 0;
+    color: rgba(42, 30, 26, .72);
+    line-height: 1.6;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+    .about-page .values-section .services-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===== Títulos centralizados + dourado ===== */
+.about-page .values-section .section-title,
+.about-page .about-team .section-title {
+    text-align: center !important;
+    color: #b8842b !important;
+    /* dourado/mostarda */
+}

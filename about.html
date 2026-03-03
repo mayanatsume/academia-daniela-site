@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/about.css?v=999">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -20,7 +22,6 @@
             <a class="brand" href="index.html">
                 <img src="assets/img/logo.png" alt="Academia Daniela Silva">
             </a>
-
             <div class="header-right">
                 <div class="header-contact">
                     <a class="contact-link" href="https://wa.me/351919312518" target="_blank" rel="noopener">
@@ -66,7 +67,8 @@
             </div>
         </section>
 
-        <section class="section-padding" style="background: var(--nude);">
+        <body class="about-page"></body>
+        <section class="section-padding values-section">
             <div class="container">
                 <h2 class="section-title text-center">Os Nossos Valores</h2>
                 <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
@@ -86,6 +88,55 @@
             </div>
         </section>
     </main>
+    <!-- A nossa equipa -->
+    <section class="about-team section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">A nossa equipa</h2>
+
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="assets/img/dani2.jpg" alt="Sónia Fernandes">
+                    </div>
+                    <div class="team-info">
+                        <h3>Daniela Silva</h3>
+                        <p>Tecnica em Estética</p>
+                    </div>
+                </article>
+
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="assets/img/hifu.png" alt="Denise Sachim">
+                    </div>
+                    <div class="team-info">
+                        <h3>Ana</h3>
+                        <p>Esteticista</p>
+                    </div>
+                </article>
+
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="assets/img/laser.jpg" alt="Bárbara Cardoso">
+                    </div>
+                    <div class="team-info">
+                        <h3>Bárbara Cardoso</h3>
+                        <p>Técnica de Unhas</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faixa final CTA -->
+    <section class="about-cta">
+        <div class="about-cta__bg" style="background-image:url('assets/img/cta-banner.PNG');"></div>
+        <div class="about-cta__overlay"></div>
+
+        <div class="container about-cta__content">
+            <h2>Estamos aqui por si!</h2>
+            <a class="btn about-cta__btn" href="contact.html">Marque o seu horário</a>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container footer-grid">
