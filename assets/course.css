@@ -400,16 +400,23 @@
 }
 
 /* =========================
-   2) O QUE PRECISA SABER
+   2) O QUE PRECISA SABER — CLEAN + LUXO
 ========================= */
 .course-know {
+    position: relative;
     color: #fff;
+    padding: clamp(26px, 4vw, 52px) 0;
+
+    /* fundo escuro + degradê interno (no próprio bloco) */
     background:
-        radial-gradient(900px 420px at 12% 10%, rgba(212, 170, 92, .18), transparent 60%),
-        radial-gradient(900px 420px at 85% 30%, rgba(212, 170, 92, .10), transparent 60%),
+        radial-gradient(900px 420px at 12% 10%, rgba(212, 170, 92, .16), transparent 60%),
+        radial-gradient(900px 420px at 85% 30%, rgba(245, 215, 200, .08), transparent 60%),
+        linear-gradient(135deg, rgba(180, 140, 70, .10), transparent 55%),
+        linear-gradient(180deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .25)),
         #140b09;
 }
 
+/* grid */
 .know-grid {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
@@ -417,6 +424,7 @@
     align-items: center;
 }
 
+/* título */
 .know-title {
     color: #f5d7c8;
     font-size: clamp(26px, 3.2vw, 44px);
@@ -424,12 +432,14 @@
     margin: 0 0 14px;
 }
 
+/* texto */
 .know-text p {
     color: rgba(255, 255, 255, .88);
     line-height: 1.75;
     margin: 0 0 12px;
 }
 
+/* imagem */
 .know-media {
     border-radius: 24px;
     overflow: hidden;
@@ -443,9 +453,20 @@
     object-fit: cover;
 }
 
+/* mobile: imagem antes do texto */
 @media (max-width: 900px) {
     .know-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .know-media {
+        order: 1;
+        width: 100%;
+    }
+
+    .know-text {
+        order: 2;
     }
 
     .know-media img {
@@ -898,4 +919,148 @@
     .course-page .footer-bottom {
         padding: 8px 0;
     }
+}
+
+/* ===== INFO CARDS (datas/horas/modalidade) estilo + fundo nude ===== */
+.course-page .info-cards-section {
+    background: #f6e9e6;
+    /* nude pastel */
+    padding: 26px 0;
+}
+
+.course-page .info-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    text-align: left;
+}
+
+.course-page .info-card {
+    background: #4a2016;
+    /* castanho vinho */
+    color: #f6d6c9;
+    border: 1px solid rgba(245, 215, 200, .35);
+    border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, .18);
+    padding: 22px 22px;
+}
+
+.course-page .info-card h4 {
+    margin: 0 0 6px;
+    color: #f6d6c9;
+    font-weight: 700;
+}
+
+.course-page .info-card p {
+    margin: 0;
+    color: rgba(246, 214, 201, .85);
+}
+
+/* =========================
+   INFO STRIP (datas / horas / modalidade) — CLEAN
+========================= */
+
+.info-strip__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    background: #fffaf6;
+    /* beige claro (visível) */
+    border: 1px solid rgba(180, 140, 70, .28);
+    border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, .10);
+
+    padding: 18px 22px;
+    align-items: center;
+}
+
+.info-strip__item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.info-strip__ico {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(180, 140, 70, .10);
+    color: rgba(180, 140, 70, .95);
+    flex: 0 0 auto;
+}
+
+.info-strip__item h4 {
+    margin: 0 0 4px;
+    color: #2a1e1a;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.info-strip__item p {
+    margin: 0;
+    color: rgba(42, 30, 26, .70);
+}
+
+.info-strip__cta {
+    text-align: center;
+    margin-top: 18px;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+    .info-strip__grid {
+        grid-template-columns: 1fr;
+        padding: 16px 16px;
+    }
+
+    .info-strip__item h4 {
+        font-size: 18px;
+    }
+}
+
+.course-page .header .brand img {
+    height: 62px !important;
+    max-width: 220px !important;
+}
+
+@media (max-width: 900px) {
+    .course-page .header .brand img {
+        height: 54px !important;
+        max-width: 200px !important;
+    }
+}
+
+/* ===== OVERRIDE: course-know CLARO (nude/rosa) ===== */
+.course-know {
+    color: #2a1e1a !important;
+
+    background:
+        radial-gradient(900px 420px at 12% 10%, rgba(212, 170, 92, .16), transparent 60%),
+        radial-gradient(900px 420px at 85% 30%, rgba(245, 215, 200, .35), transparent 60%),
+        linear-gradient(135deg, rgba(246, 233, 230, .95), rgba(255, 250, 246, .92)) !important;
+}
+
+/* texto dentro */
+.course-know .know-text p {
+    color: rgba(42, 30, 26, .78) !important;
+}
+
+/* título */
+.course-know .know-title {
+    color: #2a1e1a !important;
+}
+
+/* Título em dourado/mostarda (igual vibe dos botões) */
+.course-know .know-title {
+    color: #9f7426 !important;
+    /* mostarda/dourado */
+}
+
+/* Corpo do texto continua escuro (legível) */
+.course-know .know-text p {
+    color: rgba(42, 30, 26, .78) !important;
 }
