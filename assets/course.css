@@ -1064,3 +1064,29 @@
 .course-know .know-text p {
     color: rgba(42, 30, 26, .78) !important;
 }
+
+/* ===== Header logo maior (topo) ===== */
+.course-page .header .brand img {
+    height: 78px !important;
+    /* ajusta: 70–90 */
+    max-width: 260px !important;
+}
+
+@media (max-width: 900px) {
+    .course-page .header .brand img {
+        height: 64px !important;
+        /* ajusta: 56–72 */
+        max-width: 220px !important;
+    }
+}
+
+/* se o header ficar “apertado”, dá espaço */
+.course-page .header {
+    min-height: 96px;
+}
+
+@media (max-width: 900px) {
+    .course-page .header {
+        min-height: 88px;
+    }
+}
