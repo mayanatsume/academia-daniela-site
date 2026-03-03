@@ -155,3 +155,16 @@ function initStickyHeader() {
         lastY = y;
     }, { passive: true });
 }
+// FIX mobile submenu: impedir que clique em "Formação" feche o menu
+(function () {
+    const submenuTriggers = document.querySelectorAll('.mobile-item.has-dropdown > .mobile-nav-link');
+
+    submenuTriggers.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // <- ESSENCIAL (para não disparar o "fecha menu")
+            const item = link.closest('.mobile-item');
+            item.classList.toggle('active');
+        }, true); // captura primeiro
+    });
+})();
