@@ -43,30 +43,42 @@
                     </a>
                 </div>
 
+
                 <nav class="nav-desktop">
                     <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
                     <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
 
+                    <!-- Formação (só dropdown, sem página geral) -->
                     <div class="nav-item has-dropdown">
-                        <a href="formations.html" class="nav-link">Formação</a>
+                        <a href="javascript:void(0)" class="nav-link">Formação <span class="caret">▾</span></a>
                         <div class="dropdown">
                             <a href="course-estetica.html" class="dropdown-link">Formação em Estética</a>
                             <a href="course-laser.html" class="dropdown-link">Formação em Laser</a>
                             <a href="course-nutricao.html" class="dropdown-link">Formação em Nutrição</a>
-                            <a href="course-hifu.html" class="dropdown-link">Formação em Hifu</a>
+                            <a href="course-hifu.html" class="dropdown-link">Formação em HIFU</a>
+                        </div>
+                    </div>
+
+                    <!-- Estética (só dropdown, sem página geral) -->
+                    <div class="nav-item has-dropdown">
+                        <a href="javascript:void(0)" class="nav-link">Estética <span class="caret">▾</span></a>
+                        <div class="dropdown">
+                            <a href="estetica-facial.html" class="dropdown-link">Estética Facial</a>
+                            <a href="estetica-corporal.html" class="dropdown-link">Estética Corporal</a>
                         </div>
                     </div>
 
                     <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
                     <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
                 </nav>
-
-                <button class="menu-toggle" aria-label="Abrir menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
+
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
     <nav class="nav-mobile">
@@ -333,29 +345,30 @@
                         <i class="fa-regular fa-calendar footer-ico"></i>
                         <a href="https://bellastudio-1.buk.pt" target="_blank" rel="noopener">Agendar — Marque o seu
                             horário</a>
-                    </li </div>
-
-                    <div class="footer-col">
-                        <h4 class="footer-title">Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Política de Privacidade</a></li>
-                            <li><a href="#">Termos e Condições</a></li>
-                            <li class="complaints-badge">
-                                <a href="#" target="_blank" rel="noopener">
-                                    <img src="assets/img/livro-reclamacoes.png" alt="Livro de Reclamações">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    </li>
             </div>
 
-            <div class="footer-bottom">
-                <div class="container">
-                    <p>© 2026 | Academia Daniela Silva | Desenvolvido por <a href="#" class="dev-link">SG Web
-                            Atelier</a>
-                    </p>
-                </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li class="complaints-badge">
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/img/livro-reclamacoes.png" alt="Livro de Reclamações">
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 | Academia Daniela Silva | Desenvolvido por <a href="#" class="dev-link">SG Web
+                        Atelier</a>
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="assets/app.js"></script>
