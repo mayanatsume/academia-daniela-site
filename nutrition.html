@@ -12,10 +12,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/nutrition.css?v=999">
 </head>
 
 <body>
 
+    <body class="nutrition-page"></body>
     <div class="topbar">
         <div class="container">
             <span>📞 +351 919 312 518</span>
@@ -41,6 +43,7 @@
                         info@belezapremium.pt
                     </a>
                 </div>
+
 
 
                 <nav class="nav-desktop">
@@ -110,46 +113,48 @@
         </ul>
     </nav>
 
-    <nav class="nav-mobile">
-        <ul class="mobile-nav-list">
-            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
-            <li><a href="about.html" class="mobile-nav-link">Quem Somos</a></li>
-            <li class="mobile-item has-dropdown">
-                <a href="#" class="mobile-nav-link">Formação ▾</a>
-                <ul class="mobile-submenu">
-                    <ul class="mobile-submenu">
-                        <li><a href="course.html">Formação em Estética</a></li>
-                        <li><a href="course.html">Formação em Laser</a></li>
-                        <li><a href="course.html">Formação em Nutrição</a></li>
-                        <li><a href="course.html">Formação em HIFU</a></li>
-                    </ul>
-                </ul>
-            </li>
-            <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
-            <li><a href="contact.html" class="mobile-nav-link">Contactos</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section class="section-padding">
-            <div class="container about-grid">
-                <div class="about-content">
-                    <h1 class="section-title">Nutrição Integrativa</h1>
-                    <p>A beleza começa de dentro para fora. O nosso serviço de nutrição foca-se em planos alimentares
-                        personalizados que complementam os seus tratamentos estéticos e promovem um estilo de vida
-                        saudável e duradouro.</p>
-                    <ul style="margin: 30px 0; list-style: circle; padding-left: 20px;">
-                        <li>Planos de Reeducação Alimentar</li>
-                        <li>Gestão de Peso e Emagrecimento</li>
-                        <li>Nutrição para a Saúde da Pele</li>
-                        <li>Acompanhamento Personalizado</li>
-                    </ul>
-                    <a href="contact.html" class="btn">Agendar Consulta</a>
+        <!-- topo com título -->
+        <section class="nutri-hero">
+            <div class="container">
+                <h1 class="nutri-title">Consultas de Nutrição</h1>
+            </div>
+        </section>
+        <section class="nutri-content">
+            <div class="container">
+
+                <div class="nutri-card">
+                    <div class="nutri-grid">
+                        <div class="nutri-text">
+                            <h2>Uma alimentação à sua medida:</h2>
+
+                            <h3>Um plano alimentar personalizado:</h3>
+                            <ul>
+                                <li>É a chave para uma vida saudável e cheia de energia.</li>
+                                <li>Adapta-se às suas necessidades e objetivos específicos.</li>
+                                <li>Previne doenças e ajuda-a a conquistar a forma física que deseja.</li>
+                            </ul>
+
+                            <h3>Com um plano alimentar ideal:</h3>
+                            <ul>
+                                <li>Terá mais disposição e vitalidade no dia a dia.</li>
+                                <li>Sentir-se-á mais leve e confiante com o seu corpo.</li>
+                                <li>Desfrutará de uma saúde plena e duradoura.</li>
+                            </ul>
+                        </div>
+
+                        <div class="nutri-image">
+                            <img src="assets/img/saudavel.png" alt="Consulta de Nutrição">
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800"
-                        alt="Nutrição" class="rounded-img">
+
+                <div class="nutri-btn-wrap">
+                    <a class="btn nutri-btn" href="https://bellastudio-1.buk.pt" target="_blank" rel="noopener">
+                        AGENDAR CONSULTA
+                    </a>
                 </div>
+
             </div>
         </section>
     </main>
