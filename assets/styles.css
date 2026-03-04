@@ -783,3 +783,42 @@ body {
         /* ajusta se quiser */
     }
 }
+
+/* ===== Footer: Instagram abaixo do logo (global) ===== */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.ig-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(180, 140, 70, .16);
+    color: rgba(180, 140, 70, .95);
+    border: 1px solid rgba(180, 140, 70, .28);
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+}
+
+/* ===== Footer: link Agendar com destaque ===== */
+.footer-links .footer-appointment a {
+    font-weight: 600;
+}
+
+.footer-links .footer-appointment {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(180, 140, 70, .18);
+}

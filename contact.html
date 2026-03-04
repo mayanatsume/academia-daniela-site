@@ -11,11 +11,13 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/contact.css?v=999">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
+    <body class="contact-page"></body>
     <header class="header">
         <div class="container">
             <a class="brand" href="index.html">
@@ -45,73 +47,79 @@
                 <button class="menu-toggle"><span></span><span></span><span></span></button>
             </div>
     </header>
-    <nav class="nav-mobile">
-        <ul class="mobile-nav-list">
-            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
-            <li><a href="about.html" class="mobile-nav-link">Quem Somos</a></li>
-            <li class="mobile-item has-dropdown">
-                <a href="#" class="mobile-nav-link">Formação ▾</a>
-                <ul class="mobile-submenu">
-                    <ul class="mobile-submenu">
-                        <li><a href="course.html">Formação em Estética</a></li>
-                        <li><a href="course.html">Formação em Laser</a></li>
-                        <li><a href="course.html">Formação em Nutrição</a></li>
-                        <li><a href="course.html">Formação em HIFU</a></li>
-                    </ul>
-                </ul>
-            </li>
-            <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
-            <li><a href="contact.html" class="mobile-nav-link">Contactos</a></li>
-        </ul>
-    </nav>
 
     <main>
-        <section class="section-padding">
+        <section class="section-padding contact-hero">
             <div class="container">
                 <h1 class="section-title text-center">Contacte-nos</h1>
-                <div class="about-grid" style="margin-top: 60px;">
-                    <div class="about-content">
-                        <h3>Estamos à sua espera</h3>
-                        <p>Tem alguma dúvida ou gostaria de agendar um tratamento? Preencha o formulário ou utilize um
-                            dos nossos contactos diretos.</p>
+                <p class="contact-sub text-center">Tem alguma dúvida ou gostaria de agendar um tratamento? Preencha o
+                    formulário ou utilize um dos nossos contactos diretos.</p>
 
-                        <div style="margin-top: 40px;">
-                            <p><strong>📍 Morada:</strong> Rua da Elegância, nº 123, Lisboa</p>
-                            <p><strong>📞 Telefone:</strong> +351 123 456 789</p>
-                            <p><strong>✉️ Email:</strong> info@belezapremium.pt</p>
-                        </div>
-
-                        <div class="hours-info">
-                            <span class="icon">🕒</span>
-                            <div>
-                                <strong>Horário</strong>
-                                <p>Segunda a Sábado: 9h às 21h</p>
-                            </div>
+                <!-- Cards rápidos -->
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="cc-ico"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <strong>+351 919 312 518</strong>
+                            <div class="cc-muted">Chamada para a rede móvel nacional</div>
                         </div>
                     </div>
-                    <div class="contact-form-wrapper">
-                        <!-- Placeholder for a simple contact form -->
-                        <div
-                            style="background: var(--nude); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow);">
-                            <form action="#" onsubmit="return false;">
-                                <div style="margin-bottom: 20px;">
-                                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Nome</label>
-                                    <input type="text" placeholder="O seu nome"
-                                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);">
-                                </div>
-                                <div style="margin-bottom: 20px;">
-                                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Email</label>
-                                    <input type="email" placeholder="O seu email"
-                                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);">
-                                </div>
-                                <div style="margin-bottom: 20px;">
-                                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Mensagem</label>
-                                    <textarea rows="4" placeholder="Como podemos ajudar?"
-                                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);"></textarea>
-                                </div>
-                                <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
-                            </form>
+
+                    <div class="contact-card">
+                        <div class="cc-ico"><i class="fa-regular fa-envelope"></i></div>
+                        <div>
+                            <strong>info@academia-daniela-silva.pt</strong>
+                            <div class="cc-muted">Resposta em até 24h úteis</div>
                         </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="cc-ico"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <strong>Rua D. Afonso Henriques 28</strong>
+                            <div class="cc-muted">Cantanhede, Portugal</div>
+                        </div>
+                    </div>
+
+                    <!-- Card Agendar -->
+                    <a class="contact-card contact-card--cta" href="https://bellastudio-1.buk.pt" target="_blank"
+                        rel="noopener">
+                        <div class="cc-ico"><i class="fa-regular fa-calendar"></i></div>
+                        <div>
+                            <strong>Agendar</strong>
+                            <div class="cc-muted">Marque o seu horário</div>
+                        </div>
+                        <span class="cc-arrow">→</span>
+                    </a>
+                </div>
+
+                <!-- Mapa + Form -->
+                <div class="contact-grid">
+                    <div class="contact-map">
+                        <!-- Troca o src pelo teu link real (Google Maps embed ou Leaflet) -->
+                        <iframe
+                            src="https://www.google.com/maps?q=Rua%20D.%20Afonso%20Henriques%2028%2C%203060-137%20Cantanhede%2C%20Portugal&output=embed"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Enviar mensagem</h3>
+
+                        <form action="#" onsubmit="return false;">
+                            <label>Nome*</label>
+                            <input type="text" placeholder="O seu nome" required>
+
+                            <label>E-mail*</label>
+                            <input type="email" placeholder="O seu email" required>
+
+                            <label>Contacto Telefónico*</label>
+                            <input type="tel" placeholder="O seu telefone" required>
+
+                            <label>Mensagem*</label>
+                            <textarea rows="6" placeholder="Como podemos ajudar?" required></textarea>
+
+                            <button type="submit" class="btn btn-full">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -124,6 +132,12 @@
                 <a href="index.html" class="footer-logo">
                     <img src="assets/img/logo.png" alt="Academia Daniela Silva">
                 </a>
+                <div class="footer-social">
+                    <a class="ig-badge" href="https://www.instagram.com/academiadaniela.ffsilva?igsh=emdvZXExemE1dTQy"
+                        target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="footer-col">
@@ -133,7 +147,13 @@
                             target="_blank" rel="noopener">+351 919 312 518</a></li>
                     <li><i class="fa-regular fa-envelope footer-ico"></i> <a
                             href="mailto:info@academia-daniela-silva.pt">info@academia-daniela-silva.pt</a></li>
-                    <li><i class="fa-solid fa-location-dot footer-ico"></i> <span>Cantanhede, Coimbra - Portugal</span>
+                    <li><i class="fa-solid fa-location-dot footer-ico"></i> <span>Rua D. Afonso Henriques 28, 3060-137 -
+                            Cantanhede, Portugal</span>
+                    <li class="footer-appointment">
+                        <i class="fa-regular fa-calendar footer-ico"></i>
+                        <a href="https://bellastudio-1.buk.pt" target="_blank" rel="noopener">Agendar — Marque o seu
+                            horário</a>
+                    </li>
                     </li>
                 </ul>
             </div>
