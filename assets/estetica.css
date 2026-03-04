@@ -79,7 +79,7 @@
 
 .estetica-text {
     font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    color: rgba(42, 30, 26, .78);
+    color: #0b0b0b;
     line-height: 1.75;
 }
 
@@ -87,7 +87,7 @@
     font-family: "Playfair Display", serif;
     font-size: clamp(26px, 3.2vw, 40px);
     margin: 0 0 10px;
-    color: #2a1e1a;
+    color: #b8842b;
 }
 
 .estetica-meta {
@@ -117,5 +117,32 @@
 
     .estetica-text h2 {
         margin-top: 6px;
+    }
+}
+
+/* ===== Mobile: SEMPRE imagem em cima + texto em baixo ===== */
+@media (max-width: 900px) {
+    .estetica-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    /* força a ordem mesmo nos blocos alternados */
+    .estetica-media {
+        order: 1;
+    }
+
+    .estetica-text {
+        order: 2;
+    }
+
+    /* dá mais “respiro” entre seções (para não colar imagem na próxima) */
+    .estetica-section {
+        padding: 28px 0;
+    }
+
+    .estetica-section+.estetica-section {
+        padding-top: 34px;
     }
 }
