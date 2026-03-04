@@ -1,0 +1,121 @@
+/* =========================================
+   ESTÉTICA (facial + corporal) — page CSS only
+========================================= */
+
+.estetica-page {
+    background: #fff;
+}
+
+/* topo (mesma vibe da nutrição: título dourado + animação) */
+.estetica-hero {
+    background:
+        radial-gradient(900px 420px at 12% 10%, rgba(212, 170, 92, .14), transparent 60%),
+        radial-gradient(900px 420px at 85% 30%, rgba(245, 215, 200, .10), transparent 60%),
+        #fff;
+    padding: 34px 0 18px;
+    text-align: center;
+}
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+.estetica-title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(34px, 4.5vw, 58px);
+    color: #b8842b;
+    /* dourado */
+    animation: dropIn .7s ease both;
+}
+
+.estetica-sub {
+    max-width: 900px;
+    margin: 10px auto 0;
+    color: rgba(42, 30, 26, .75);
+    line-height: 1.6;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* blocos alternados */
+.estetica-section {
+    padding: 42px 0;
+}
+
+.estetica-section.is-alt {
+    background: #fff6ee;
+    /* bege clarinho */
+}
+
+.estetica-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    align-items: center;
+}
+
+.estetica-media {
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(180, 140, 70, .20);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, .10);
+    background: #fff;
+}
+
+.estetica-media img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.estetica-text {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: rgba(42, 30, 26, .78);
+    line-height: 1.75;
+}
+
+.estetica-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(26px, 3.2vw, 40px);
+    margin: 0 0 10px;
+    color: #2a1e1a;
+}
+
+.estetica-meta {
+    margin-top: 12px;
+    color: rgba(42, 30, 26, .70);
+}
+
+.estetica-meta strong {
+    color: #2a1e1a;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+    .estetica-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .estetica-media img {
+        height: 320px;
+    }
+}
+
+@media (max-width: 900px) {
+    .estetica-section {
+        padding: 30px 0;
+    }
+
+    .estetica-text h2 {
+        margin-top: 6px;
+    }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estética Facial | Academia Daniela Silva</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css?v=999">
+    <link rel="stylesheet" href="assets/estetica.css?v=999">
+</head>
+
+<body class="estetica-page">
+
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/img/logo.png" alt="Academia Daniela Silva">
+            </a>
+
+            <div class="header-right">
+                <div class="header-contact">
+                    <a class="contact-link" href="https://wa.me/351919312518" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp contact-ico"></i>
+                        +351 919 312 518 (Chamada para a rede móvel nacional)
+                    </a>
+
+                    <a class="contact-link" href="mailto:info@belezapremium.pt">
+                        <i class="fa-regular fa-envelope contact-ico"></i>
+                        info@belezapremium.pt
+                    </a>
+                </div>
+
+
+                <nav class="nav-desktop">
+                    <div class="nav-item"><a href="index.html" class="nav-link">Início</a></div>
+                    <div class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></div>
+
+                    <!-- Formação (só dropdown, sem página geral) -->
+                    <div class="nav-item has-dropdown">
+                        <a href="javascript:void(0)" class="nav-link">Formação <span class="caret">▾</span></a>
+                        <div class="dropdown">
+                            <a href="course-estetica.html" class="dropdown-link">Formação em Estética</a>
+                            <a href="course-laser.html" class="dropdown-link">Formação em Laser</a>
+                            <a href="course-nutricao.html" class="dropdown-link">Formação em Nutrição</a>
+                            <a href="course-hifu.html" class="dropdown-link">Formação em HIFU</a>
+                        </div>
+                    </div>
+
+                    <!-- Estética (só dropdown, sem página geral) -->
+                    <div class="nav-item has-dropdown">
+                        <a href="javascript:void(0)" class="nav-link">Estética <span class="caret">▾</span></a>
+                        <div class="dropdown">
+                            <a href="estetica-facial.html" class="dropdown-link">Estética Facial</a>
+                            <a href="estetica-corporal.html" class="dropdown-link">Estética Corporal</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item"><a href="nutrition.html" class="nav-link">Nutrição</a></div>
+                    <div class="nav-item"><a href="contact.html" class="nav-link">Contactos</a></div>
+                </nav>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-mobile">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+            <li><a href="about.html" class="mobile-nav-link">Quem Somos</a></li>
+
+            <!-- Formação (só dropdown, sem página geral) -->
+            <li class="mobile-item has-dropdown">
+                <a href="javascript:void(0)" class="mobile-nav-link">Formação ▾</a>
+                <ul class="mobile-submenu">
+                    <li><a href="course-estetica.html">Formação em Estética</a></li>
+                    <li><a href="course-laser.html">Formação em Laser</a></li>
+                    <li><a href="course-nutricao.html">Formação em Nutrição</a></li>
+                    <li><a href="course-hifu.html">Formação em HIFU</a></li>
+                </ul>
+            </li>
+
+            <!-- Estética (só dropdown, sem página geral) -->
+            <li class="mobile-item has-dropdown">
+                <a href="javascript:void(0)" class="mobile-nav-link">Estética ▾</a>
+                <ul class="mobile-submenu">
+                    <li><a href="estetica-facial.html">Estética Facial</a></li>
+                    <li><a href="estetica-corporal.html">Estética Corporal</a></li>
+                </ul>
+            </li>
+
+            <li><a href="nutrition.html" class="mobile-nav-link">Nutrição</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contactos</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section class="estetica-hero">
+            <div class="container">
+                <h1 class="estetica-title">Tratamentos de Corpo</h1>
+                <p class="estetica-sub">
+                    Cuidados personalizados para uma pele mais luminosa, hidratada e saudável — com técnicas seguras e
+                    resultados visíveis.
+                </p>
+            </div>
+        </section>
+
+        <!-- 1 (branco) imagem direita, texto esquerda -->
+        <section class="estetica-section">
+            <div class="container estetica-grid">
+                <div class="estetica-text">
+                    <h2>Massagem</h2>
+                    <p>Tratamento de relaxamentol, e hidratação.</p>
+                    <p>Inclui higienização, esfoliação, vapor de ozono, sérum, máscara e finalização.</p>
+                    <p class="estetica-meta"><strong>Duração:</strong> 1h a 2h</p>
+                </div>
+                <div class="estetica-media">
+                    <img src="assets/img/estetica.png" alt="Limpeza de Pele Profunda">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2 (bege) imagem esquerda, texto direita -->
+        <section class="estetica-section is-alt">
+            <div class="container estetica-grid">
+                <div class="estetica-media">
+                    <img src="assets/img/laser.jpg" alt="Radiofrequência">
+                </div>
+                <div class="estetica-text">
+                    <h2>Radiofrequência</h2>
+                    <p>Estimula colagénio, melhora firmeza e elasticidade e ajuda a suavizar linhas finas.</p>
+                    <p class="estetica-meta"><strong>Duração:</strong> 30 min • <strong>Sessões:</strong> 3 a 5</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 (branco) imagem direita -->
+        <section class="estetica-section">
+            <div class="container estetica-grid">
+                <div class="estetica-text">
+                    <h2>HIFU</h2>
+                    <p>Emagrecimento, Rejuvenescimento e maciez à pele.</p>
+                    <p class="estetica-meta"><strong>Duração:</strong> 45 min</p>
+                </div>
+                <div class="estetica-media">
+                    <img src="assets/img/radio.jpg" alt="Hidratação / Glow">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 (bege) imagem esquerda -->
+        <section class="estetica-section is-alt">
+            <div class="container estetica-grid">
+                <div class="estetica-media">
+                    <img src="assets/img/rejuvecorporal.png" alt="Anti-idade / Rejuvenescimento">
+                </div>
+                <div class="estetica-text">
+                    <h2>Anti-idade / Rejuvenescimento</h2>
+                    <p>Tratamentos focados em textura, firmeza e luminosidade, com protocolos personalizados.</p>
+                    <p class="estetica-meta"><strong>Duração:</strong> 50–70 min</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/img/logo.png" alt="Academia Daniela Silva">
+                </a>
+
+                <div class="footer-social">
+                    <a class="ig-badge" href="https://www.instagram.com/academiadaniela.ffsilva?igsh=emdvZXExemE1dTQy"
+                        target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contactos</h4>
+                <ul class="footer-links">
+                    <li><i class="fa-brands fa-whatsapp footer-ico"></i> <a href="https://wa.me/351919312518"
+                            target="_blank" rel="noopener">+351 919 312 518</a></li>
+                    <li><i class="fa-regular fa-envelope footer-ico"></i> <a
+                            href="mailto:info@academia-daniela-sila.pt">info@academia-daniela-silva.pt</a></li>
+                    <li>
+                        <i class="fa-solid fa-location-dot footer-ico"></i>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua%20D.%20Afonso%20Henriques%2028%2C%203060-137%20Cantanhede%2C%20Portugal"
+                            target="_blank" rel="noopener">
+                            Rua D. Afonso Henriques - 28, 3060-137 Cantanhede, Portugal
+                    <li>
+                        <i class="fa-regular fa-calendar footer-ico"></i>
+                        <a href="https://bellastudio-1.buk.pt" target="_blank" rel="noopener">Agendar — Marque o seu
+                            horário</a>
+                    </li>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li class="complaints-badge">
+                        <a href="#" target="_blank" rel="noopener">
+                            <img src="assets/img/livro-reclamacoes.png" alt="Livro de Reclamações">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>
+                    © 2026 | Academia Daniela Silva | Todos os Direitos Reservados |
+                    Desenvolvido por
+                    <a href="https://teusite.com" target="_blank" class="dev-link">SG Web Atelier</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/app.js?v=999"></script>
+</body>
+
+</html>
