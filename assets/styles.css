@@ -822,3 +822,19 @@ body {
     padding-top: 10px;
     border-top: 1px solid rgba(180, 140, 70, .18);
 }
+
+.nav-desktop .dropdown-toggle {
+    cursor: pointer;
+}
+
+.nav-desktop .dropdown-toggle .caret {
+    margin-left: 6px;
+    opacity: .8;
+    font-size: 12px;
+}
+
+.nav-desktop .caret {
+    margin-left: 6px;
+    font-size: 12px;
+    opacity: .75;
+}
