@@ -1,0 +1,66 @@
+/* =========================================
+   Legal Pages Specific Styles
+   ========================================= */
+
+.legal-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 60px 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    margin-bottom: 60px;
+}
+
+.legal-header-links {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.legal-header-links a {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legal-header-links a:hover {
+    color: var(--text);
+}
+
+.legal-title {
+    font-size: 36px;
+    color: var(--gold);
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 15px;
+}
+
+.legal-content h2,
+.legal-content h3 {
+    color: var(--text);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.legal-content p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.legal-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    color: var(--text-light);
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}

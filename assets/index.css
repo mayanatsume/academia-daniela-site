@@ -478,3 +478,16 @@
         /* se precisar subir mais: center -80px */
     }
 }
+
+.about-text {
+    max-width: 760px;
+}
+
+.about-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9 rem;
+    line-height: 1.95;
+    color: #3a342f;
+    margin-bottom: 24px;
+    font-weight: 300;
+}

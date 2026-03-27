@@ -1,0 +1,126 @@
+/* Workshops Layout */
+.workshops-hero {
+    padding: 80px 20px 40px;
+    text-align: center;
+    background-color: #fafafa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.workshops-title {
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.workshops-subtitle {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.workshops-content {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.workshop-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+    align-items: flex-start;
+}
+
+/* Alternate blocks if needed */
+.workshop-block.reverse .workshop-info {
+    order: 2;
+}
+
+.workshop-block.reverse .workshop-form-wrapper {
+    order: 1;
+}
+
+.workshop-info h2 {
+    font-size: 32px;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.workshop-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.workshop-details li {
+    font-size: 15px;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.workshop-details i {
+    color: var(--gold);
+    width: 20px;
+    text-align: center;
+}
+
+.workshop-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background: #fafafa;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+}
+
+.workshop-form-wrapper {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f5f5f5;
+}
+
+.workshop-form-wrapper h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.workshop-form-wrapper>p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+    .workshop-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .workshop-block.reverse .workshop-info,
+    .workshop-block.reverse .workshop-form-wrapper {
+        order: unset;
+    }
+
+    .workshop-form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .workshops-title {
+        font-size: 32px;
+    }
+}

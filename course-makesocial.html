@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de HIFU | Academia Daniela Silva</title>
+    <title>Maquilhagem Social | Academia Daniela Silva</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -123,20 +123,39 @@
 
                     <div class="course-hero__content">
                         <div class="hero-text-side">
-                            <h1>Curso de HIFU</h1>
+                            <h1>Curso de Maquilhagem Social</h1>
                             <p class="course-kicker">Domine as tecnologias mais avançadas do mercado e eleve o seu
                                 padrão de serviço. Formação intensiva focada na prática e resultados reais.</p>
                         </div>
 
-                        <form class="course-form">
+                        <form id="course-registration-form" class="course-form">
                             <h3>Quero me inscrever!</h3>
                             <p>Preencha os dados e entraremos em contacto.</p>
 
                             <div class="field">
-                                <input type="text" placeholder="Nome Completo" required>
-                                <input type="email" placeholder="E-mail" required>
-                                <input type="tel" placeholder="WhatsApp" required>
+                                <input type="text" name="full_name" placeholder="Nome Completo" required>
+                                <input type="email" name="email" placeholder="E-mail" required>
+                                <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+                                <input type="hidden" name="course_name" value="Maquilhagem Social">
+
+                                <div class="privacy-checkbox"
+                                    style="margin: 15px 0; display: flex; align-items: flex-start; gap: 8px; text-align: left;">
+                                    <input type="checkbox" name="privacy_consent" id="privacy_consent" required
+                                        style="margin-top: 4px; width: auto; height: auto;">
+                                    <label for="privacy_consent"
+                                        style="font-size: 12px; color: var(--text-light); line-height: 1.4; font-weight: 400;">
+                                        Li e aceito a <a href="privacy.html"
+                                            style="color: var(--gold); text-decoration: underline;">Política de
+                                            Privacidade</a> e autorizo o tratamento dos meus dados para contacto e
+                                        gestão da inscrição neste curso.
+                                    </label>
+                                </div>
+
                                 <button class="btn btn-full" type="submit">QUERO INSCREVER-ME!</button>
+
+                                <p style="font-size: 11px; color: #999; text-align: center; margin-top: 10px;">
+                                    Os seus dados serão utilizados apenas para contacto e gestão da sua inscrição.
+                                </p>
                             </div>
                         </form>
                     </div>
@@ -339,6 +358,13 @@
                 <a href="index.html" class="footer-logo">
                     <img src="assets/img/logo.png" alt="Academia Daniela Silva">
                 </a>
+
+                <div class="footer-social">
+                    <a class="ig-badge" href="https://www.instagram.com/academiadaniela.ffsilva?igsh=emdvZXExemE1dTQy"
+                        target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="footer-col">
@@ -348,7 +374,13 @@
                             target="_blank" rel="noopener">+351 919 312 518</a></li>
                     <li><i class="fa-regular fa-envelope footer-ico"></i> <a
                             href="mailto:info@academia-daniela-silva.pt">info@academia-daniela-silva.pt</a></li>
-                    <li><i class="fa-solid fa-location-dot footer-ico"></i> <span>Cantanhede, Coimbra - Portugal</span>
+                    <li><i class="fa-solid fa-location-dot footer-ico"></i> <span>Rua D. Afonso Henriques 28, 3060-137
+                            Cantanhede - Portugal</span>
+                    </li>
+                    <li class="footer-appointment">
+                        <i class="fa-regular fa-calendar footer-ico"></i>
+                        <a href="https://bellastudio-1.buk.pt" target="_blank" rel="noopener">Agendar — Marque o seu
+                            horário</a>
                     </li>
                 </ul>
             </div>
@@ -379,6 +411,7 @@
 
     <script src="assets/app.js"></script>
     <script src="assets/cookies.js"></script>
+    <script src="assets/forms-submit.js"></script>
 </body>
 
 </html>
