@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonialSlider();
     initAccordions();
     initStickyHeader();
+    initCourseSlider();
 });
 
 /**
@@ -154,6 +155,61 @@ function initStickyHeader() {
 
         lastY = y;
     }, { passive: true });
+}
+
+/**
+ * Homepage Course Slider (Horizontal Scroll)
+ */
+function initCourseSlider() {
+    const grid = document.querySelector('.services-grid');
+    const prevBtn = document.querySelector('.slider-arrow.prev');
+    const nextBtn = document.querySelector('.slider-arrow.next');
+    const scrollHint = document.querySelector('.scroll-hint');
+
+    if (!grid || !prevBtn || !nextBtn) return;
+
+    // Função para calcular o quanto scrollar (1 card + gap)
+    const getScrollAmount = () => {
+        const firstCard = grid.querySelector('.service-card');
+        if (!firstCard) return 320;
+        const style = window.getComputedStyle(grid);
+        const gap = parseInt(style.gap) || 30;
+        return firstCard.offsetWidth + gap;
+    };
+
+    prevBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    // Ocultar setas e hint se não houver overflow real
+    const toggleControls = () => {
+        const hasOverflow = grid.scrollWidth > grid.clientWidth;
+        const isDesktop = window.innerWidth >= 1024;
+
+        prevBtn.style.display = (hasOverflow && isDesktop) ? 'flex' : 'none';
+        nextBtn.style.display = (hasOverflow && isDesktop) ? 'flex' : 'none';
+
+        if (scrollHint) {
+            scrollHint.style.display = (hasOverflow && !isDesktop) ? 'flex' : 'none';
+        }
+    };
+
+    grid.addEventListener('scroll', () => {
+        // Opcional: desativar setas se chegar ao fim/início
+        const isAtStart = grid.scrollLeft <= 5;
+        const isAtEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 5;
+        prevBtn.style.opacity = isAtStart ? '0.3' : '1';
+        prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+        nextBtn.style.opacity = isAtEnd ? '0.3' : '1';
+        nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+    });
+
+    window.addEventListener('resize', toggleControls);
+    toggleControls();
 }
 // FIX mobile submenu: impedir que clique em "Formação" feche o menu
 (function () {
