@@ -164,13 +164,55 @@ function initCourseSlider() {
     const grid = document.querySelector('.services-grid');
     const prevBtn = document.querySelector('.slider-arrow.prev');
     const nextBtn = document.querySelector('.slider-arrow.next');
-    const scrollHint = document.querySelector('.scroll-hint');
+    const dotsContainer = document.querySelector('.courses-dots');
 
-    if (!grid || !prevBtn || !nextBtn) return;
+    if (!grid || !prevBtn || !nextBtn || !dotsContainer) return;
 
-    // Função para calcular o quanto scrollar (1 card + gap)
+    const cards = grid.querySelectorAll('.service-card');
+    let autoplayInterval;
+    let isUserInteracting = false;
+    let interactionTimeout;
+
+    // Limpar dots existentes (prevenção)
+    dotsContainer.innerHTML = '';
+
+    // Criar dots dinamicamente (1 para cada card)
+    cards.forEach((_, i) => {
+        const span = document.createElement('span');
+        span.classList.add('dot');
+        if (i === 0) span.classList.add('active');
+        span.addEventListener('click', () => {
+            scrollToCard(i);
+            stopAutoplay();
+            startAutoplayDelay();
+        });
+        dotsContainer.appendChild(span);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function scrollToCard(index) {
+        const firstCard = cards[0];
+        const style = window.getComputedStyle(grid);
+        const gap = parseInt(style.gap) || 30;
+        const cardWidth = firstCard.offsetWidth + gap;
+        grid.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+    }
+
+    function updateActiveDot() {
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        const style = window.getComputedStyle(grid);
+        const gap = parseInt(style.gap) || 30;
+        const cardWidth = firstCard.offsetWidth + gap;
+        const index = Math.round(grid.scrollLeft / cardWidth);
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
     const getScrollAmount = () => {
-        const firstCard = grid.querySelector('.service-card');
+        const firstCard = cards[0];
         if (!firstCard) return 320;
         const style = window.getComputedStyle(grid);
         const gap = parseInt(style.gap) || 30;
@@ -185,32 +227,71 @@ function initCourseSlider() {
         grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
 
-    // Ocultar setas e hint se não houver overflow real
-    const toggleControls = () => {
-        const hasOverflow = grid.scrollWidth > grid.clientWidth;
-        const isDesktop = window.innerWidth >= 1024;
+    // Autoplay Suave (Mobile Only)
+    function startAutoplay() {
+        if (window.innerWidth >= 1024) return;
+        stopAutoplay();
+        autoplayInterval = setInterval(() => {
+            if (isUserInteracting) return;
+            const scrollAmount = getScrollAmount();
+            let nextScroll = grid.scrollLeft + scrollAmount;
 
-        prevBtn.style.display = (hasOverflow && isDesktop) ? 'flex' : 'none';
-        nextBtn.style.display = (hasOverflow && isDesktop) ? 'flex' : 'none';
+            if (nextScroll >= grid.scrollWidth - 10) {
+                grid.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }, 5000);
+    }
 
-        if (scrollHint) {
-            scrollHint.style.display = (hasOverflow && !isDesktop) ? 'flex' : 'none';
-        }
-    };
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function startAutoplayDelay() {
+        clearTimeout(interactionTimeout);
+        interactionTimeout = setTimeout(() => {
+            isUserInteracting = false;
+            startAutoplay();
+        }, 8000);
+    }
+
+    grid.addEventListener('touchstart', () => {
+        isUserInteracting = true;
+        stopAutoplay();
+    }, { passive: true });
+
+    grid.addEventListener('touchend', () => {
+        startAutoplayDelay();
+    }, { passive: true });
 
     grid.addEventListener('scroll', () => {
-        // Opcional: desativar setas se chegar ao fim/início
+        updateActiveDot();
+
         const isAtStart = grid.scrollLeft <= 5;
         const isAtEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 5;
         prevBtn.style.opacity = isAtStart ? '0.3' : '1';
         prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
         nextBtn.style.opacity = isAtEnd ? '0.3' : '1';
         nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-    });
+    }, { passive: true });
+
+    const toggleControls = () => {
+        const hasOverflow = grid.scrollWidth > grid.clientWidth;
+        const isDesktop = window.innerWidth >= 1024;
+
+        prevBtn.style.display = (hasOverflow && isDesktop) ? 'flex' : 'none';
+        nextBtn.style.display = (hasOverflow && isDesktop) ? 'flex' : 'none';
+        dotsContainer.style.display = (hasOverflow && !isDesktop) ? 'flex' : 'none';
+
+        if (isDesktop) stopAutoplay();
+        else startAutoplay();
+    };
 
     window.addEventListener('resize', toggleControls);
     toggleControls();
 }
+
 // FIX mobile submenu: impedir que clique em "Formação" feche o menu
 (function () {
     const submenuTriggers = document.querySelectorAll('.mobile-item.has-dropdown > .mobile-nav-link');

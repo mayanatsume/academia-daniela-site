@@ -347,21 +347,32 @@
     }
 }
 
-/* Scroll Hint (Mobile only) - Só aparece se houver overflow real */
-.scroll-hint {
-    display: flex;
-    align-items: center;
+/* Dots de Navegação (Mobile only) */
+.courses-dots {
+    display: none;
     justify-content: center;
     gap: 10px;
-    font-size: 13px;
-    color: var(--text-light);
-    margin-top: 10px;
-    opacity: 0.8;
+    margin-top: 25px;
 }
 
-@media (min-width: 901px) {
-    .scroll-hint {
-        display: none;
+.courses-dots .dot {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.courses-dots .dot.active {
+    background: var(--gold);
+    width: 24px;
+    border-radius: 10px;
+}
+
+@media (max-width: 1023px) {
+    .courses-dots {
+        display: flex;
     }
 }
 
