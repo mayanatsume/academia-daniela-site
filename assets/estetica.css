@@ -146,3 +146,26 @@
         padding-top: 34px;
     }
 }
+
+/* Botão de marcação refinado para os serviços */
+.btn-service {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: var(--transition);
+    text-transform: none;
+    /* Menos agressivo que o global */
+}
+
+.btn-service:hover {
+    background: var(--gold);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}

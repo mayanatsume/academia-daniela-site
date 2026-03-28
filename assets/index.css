@@ -347,6 +347,10 @@
     }
 }
 
+.courses-title {
+    color: var(--gold);
+}
+
 /* Dots de Navegação (Mobile only) */
 .courses-dots {
     display: none;
@@ -374,19 +378,17 @@
     .courses-dots {
         display: flex;
     }
-}
 
-@media (max-width: 900px) {
-    .services-grid {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-left: -20px;
-        width: calc(100% + 40px);
-        gap: 20px;
+    .services-slider-wrapper {
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .service-card {
-        flex: 0 0 260px;
+    .services-grid {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        width: 100%;
     }
 }
 
@@ -638,4 +640,10 @@
     color: #3a342f;
     margin-bottom: 24px;
     font-weight: 300;
+}
+
+.courses-title {
+    text-align: center;
+    width: 100%;
+    display: block;
 }

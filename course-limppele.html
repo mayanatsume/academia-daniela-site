@@ -124,8 +124,10 @@
                     <div class="course-hero__content">
                         <div class="hero-text-side">
                             <h1>Curso de Limpeza de Pele</h1>
-                            <p class="course-kicker">Domine as tecnologias mais avançadas do mercado e eleve o seu
-                                padrão de serviço. Formação intensiva focada na prática e resultados reais.</p>
+                            <p class="course-kicker">Domine técnicas profissionais de limpeza de pele e aprenda a criar
+                                protocolos personalizados para cada tipo de pele, garantindo resultados eficazes sem
+                                comprometer a barreira cutânea.
+                                Formação prática focada na segurança, técnica e resultados reais.</p>
                         </div>
 
                         <form id="course-registration-form" class="course-form">
@@ -168,22 +170,26 @@
                     <div class="know-text">
                         <h2 class="know-title">O que precisa de saber sobre o curso?</h2>
                         <p>
-                            A Limpeza de Pele foi desenvolvida para capacitar profissionais que
-                            desejam atuar com segurança, técnica e excelência no cuidado da pele e do bem-estar.
-                            Durante o curso, as alunas aprendem protocolos completos, fundamentos teóricos essenciais
-                            e prática supervisionada, garantindo domínio real das técnicas aplicadas.
+                            A formação de Limpeza de Pele foi desenvolvida para capacitar profissionais que desejam
+                            atuar com segurança,
+                            técnica e excelência no cuidado da pele. Ao longo do curso, a formanda aprende a avaliar
+                            diferentes tipos de pele
+                            e a criar protocolos personalizados, adaptados às necessidades de cada cliente.
                         </p>
                         <p>
-                            Com foco em resultados e posicionamento profissional, esta formação prepara a aluna para
-                            oferecer
-                            serviços de qualidade, aumentar a confiança no atendimento e elevar o padrão dos seus
-                            serviços no
-                            mercado da estética.
+                            Com uma abordagem prática e orientada para resultados, são ensinadas técnicas de limpeza
+                            profunda que respeitam a barreira cutânea,
+                            garantindo eficácia sem causar danos.
+                        </p>
+                        <p>
+                            Objectivo Final do Curso: A formanda fica apta a criar um protocolo adequado a cada tipo de
+                            pele e a realizar uma limpeza de pele profunda,
+                            sem comprometer a integridade da barreira cutânea.
                         </p>
                     </div>
 
                     <div class="know-media">
-                        <img src="assets/img/nail.jpg" alt="Aparatologia" />
+                        <img src="assets/img/limpeza.png" alt="Aparatologia" />
                     </div>
                 </div>
             </div>
@@ -229,7 +235,8 @@
                     <div class="include-side">
                         <h2 class="section-title">O que inclui o curso?</h2>
                         <ul class="check-list">
-                            <li><i class="fa-solid fa-check"></i> Formação Intensiva de 8h (teórica e prática)</li>
+                            <li><i class="fa-solid fa-check"></i> 2 Dias de Formação Intensiva de 8h (teórica e prática)
+                            </li>
                             <li><i class="fa-solid fa-check"></i> Manual em PDF</li>
                             <li><i class="fa-solid fa-check"></i> Kit Exclusivo</li>
                             <li><i class="fa-solid fa-check"></i> Coffee Break</li>
@@ -255,35 +262,182 @@
         <section class="course-section">
             <div class="course-wrap">
                 <h2 class="section-title text-center">O que vai aprender?</h2>
-                <div class="accordion" style="max-width: 800px; margin: 40px auto 0;">
-                    <div class="accordion-item">
-                        <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
-                            <span>Módulo 1: Introdução à Estética Avançada</span>
-                            <span class="icon">+</span>
+
+                <style>
+                    .course-tabs {
+                        display: flex;
+                        justify-content: center;
+                        gap: 15px;
+                        margin: 30px 0 10px;
+                    }
+
+                    .tab-btn {
+                        background: transparent;
+                        border: 1px solid var(--gold);
+                        color: var(--gold);
+                        padding: 10px 40px;
+                        border-radius: 999px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: var(--transition);
+                        font-family: inherit;
+                        font-size: 16px;
+                    }
+
+                    .tab-btn:hover,
+                    .tab-btn.active {
+                        background: var(--gold);
+                        color: #fff;
+                    }
+
+                    .tab-content {
+                        display: none;
+                        animation: tabFadeIn 0.5s ease forwards;
+                    }
+
+                    .tab-content.active {
+                        display: block;
+                    }
+
+                    @keyframes tabFadeIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(10px);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .dia4-practice {
+                        background: #fff;
+                        padding: 40px;
+                        border-radius: 20px;
+                        border: 1px solid rgba(180, 140, 70, 0.3);
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                        text-align: center;
+                    }
+
+                    .dia4-practice p {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: var(--gold);
+                        margin: 0;
+                        font-family: "Playfair Display", serif;
+                    }
+                </style>
+
+                <div class="course-tabs">
+                    <button class="tab-btn active" onclick="showCourseDay(3)">DIA 3</button>
+                    <button class="tab-btn" onclick="showCourseDay(4)">DIA 4</button>
+                </div>
+
+                <!-- CONTEÚDO DIA 3 -->
+                <div id="day3-content" class="tab-content active">
+                    <div class="accordion" style="max-width: 800px; margin: 30px auto 0;">
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 1 — Atendimento ao Cliente</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Técnicas de receção, ética profissional e como fidelizar a cliente desde o primeiro
+                                    contacto.</p>
+                            </div>
                         </div>
-                        <div class="accordion-content">
-                            <p>Exploração dos conceitos fundamentais e tendências atuais do mercado de estética.</p>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 2 — Higiene e Segurança</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Protocolos de esterilização, desinfeção e normas de biossegurança no gabinete.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
-                            <span>Módulo 2: Técnicas de Aplicação Prática</span>
-                            <span class="icon">+</span>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 3 — Introdução à Limpeza de Pele</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Anatomia da pele, tipos de pele e os fundamentos de uma limpeza profunda segura.</p>
+                            </div>
                         </div>
-                        <div class="accordion-content">
-                            <p>Demonstração e prática em modelos reais utilizando equipamentos de última geração.</p>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 4 — Introdução à Cosmetologia</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Compreensão de ativos cosméticos e como escolher os produtos certos para cada caso.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
-                            <span>Módulo 3: Segurança e Biossegurança</span>
-                            <span class="icon">+</span>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 5 — Protocolos e Materiais</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Passo a passo técnica de extração e uso correto de espátula ultrassónica e alta
+                                    frequência.</p>
+                            </div>
                         </div>
-                        <div class="accordion-content">
-                            <p>Normas de higiene, segurança no trabalho e cuidados pós-tratamento.</p>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 6 — Cuidados Pós-Procedimento</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Como acalmar a pele e garantir uma recuperação perfeita sem marcas.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Módulo 7 — Aconselhamento Home Care</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Prescrição de rotinas para a cliente manter os resultados em casa.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" role="button" aria-expanded="false" tabindex="0">
+                                <span>Demonstração Prática</span>
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Prática realizada pela formadora, sob observação detalhada das formandas.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- CONTEÚDO DIA 4 -->
+                <div id="day4-content" class="tab-content">
+                    <div style="max-width: 800px; margin: 30px auto 0;">
+                        <div class="dia4-practice">
+                            <p>Prática das formandas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function showCourseDay(day) {
+                        // Toggle Buttons
+                        document.querySelectorAll('.tab-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.innerText.includes(day)) btn.classList.add('active');
+                        });
+                        // Toggle Content
+                        document.querySelectorAll('.tab-content').forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        document.getElementById('day' + day + '-content').classList.add('active');
+                    }
+                </script>
             </div>
         </section>
 
@@ -310,10 +464,19 @@
                     <div class="trainer-info">
                         <h2 class="section-title">Quem é a Formadora?</h2>
                         <div class="trainer-text">
-                            <p>Com mais de 10 anos de experiência clínica, a Daniela Silva dedica-se a capacitar novos
-                                profissionais com as técnicas que geram resultados reais.</p>
-                            <p>Cada formação é desenhada para ser prática, objetiva e segura, garantindo que sai daqui
-                                com total confiança para aplicar o que aprendeu.</p>
+                            <p>Daniela é profissional na área da estética, com diversas formações especializadas
+                                e experiência prática no atendimento ao público.</p>
+                            <p>Ao longo do seu percurso, desenvolveu um espaço de estética focado na qualidade,
+                                cuidado personalizado e satisfação das suas clientes, conquistando a confiança de
+                                quem procura resultados reais e um serviço de excelência.</p>
+                            <p>Enquanto formadora, o seu principal objetivo é partilhar conhecimento de forma clara e
+                                prática,
+                                preparando as alunas para atuarem com segurança,
+                                confiança e profissionalismo no mercado da estética.</p>
+                            <p>Acredita que a formação contínua, aliada à prática real, é essencial para o crescimento e
+                                sucesso na área,
+                                incentivando cada formanda a evoluir e a destacar-se através da qualidade
+                                do seu trabalho.</p>
                         </div>
                         <a class="btn" href="#inscricao">QUERO INSCREVER-ME!</a>
                     </div>
