@@ -1,24 +1,34 @@
 /**
  * Google Apps Script Web App Integration
- * Form Submission Logic for Course Pages
+ * Form Submission Logic for Course Registrations and Contact Form
+ *
+ * BACKEND SETUP:
+ * 1. Create a Google Apps Script
+ * 2. Add a doPost(e) function to handle the JSON/FormData
+ * 3. Deploy as Web App (Execute as: Me, Access: Anyone)
+ * 4. Paste the URL below in SCRIPT_URL
+ *
+ * PAYLOADS:
+ * - Common: source_page, submitted_at, form_type (course|contact)
+ * - Course: full_name, email, whatsapp, course_name, privacy_consent
+ * - Contact: full_name, email, phone, message
+ *
+ * TEST EMAIL: mayainatsume@gmail.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const forms = document.querySelectorAll('.course-form');
-    if (forms.length === 0) return; // Only execute if form is present on page
+    const forms = document.querySelectorAll('.course-form, .contact-form-element');
+    if (forms.length === 0) return;
 
-    // PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE
-    // O programador Backend deve substituir esta constante com a macro "deploy URL" do Apps Script.
-    const SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMOBXv5yuzFq2Vd7gkRd4kNpbq19f6zXIoWtnzBI_vS97LLduCvXYe4lEZoHRfu1aBRw/exec";
 
-    forms.forEach(form => {
+    forms.forEach((form) => {
+        const isContactForm = form.classList.contains('contact-form-element');
         const submitBtn = form.querySelector('button[type="submit"]');
         if (!submitBtn) return;
 
         const originalBtnText = submitBtn.innerText;
 
-        // Inject custom message container if missing, fallback config
-        // Now scoped per form
         let messageBox = form.querySelector('.form-message-alert');
         if (!messageBox) {
             messageBox = document.createElement('div');
@@ -34,70 +44,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-
-            // Hide previous messages for this specific form
             messageBox.style.display = 'none';
 
-            // 1. Validate Privacy Checkbox explicitly within this form
-            const privacyCheckbox = form.querySelector('input[name="privacy_consent"]');
-            if (privacyCheckbox && !privacyCheckbox.checked) {
-                messageBox.style.display = 'block';
-                messageBox.style.backgroundColor = '#fff3f3';
-                messageBox.style.color = '#d32f2f';
-                messageBox.style.border = '1px solid #ffcdd2';
-                messageBox.innerText = 'Por favor, aceite a Política de Privacidade para continuar.';
-                return;
+            if (!isContactForm) {
+                const privacyCheckbox = form.querySelector('input[name="privacy_consent"]');
+                if (privacyCheckbox && !privacyCheckbox.checked) {
+                    showMessage(
+                        messageBox,
+                        'Por favor, aceite a Política de Privacidade para continuar.',
+                        'error'
+                    );
+                    return;
+                }
             }
 
-            // 2. Prevent Multiple Submissions on this specific button
             submitBtn.disabled = true;
             submitBtn.innerText = 'A enviar...';
 
-            // 3. Prepare Payload
             const formData = new FormData(form);
-
-            // Append backend specific metrics
             const sourcePage = window.location.pathname.split('/').pop() || 'index.html';
+
             formData.append('source_page', sourcePage);
             formData.append('submitted_at', new Date().toISOString());
+            formData.append('form_type', isContactForm ? 'contact' : 'course');
 
             try {
+                if (SCRIPT_URL === "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE") {
+                    throw new Error("PLACEHOLDER_URL");
+                }
+
                 const response = await fetch(SCRIPT_URL, {
                     method: 'POST',
                     body: formData
                 });
 
                 if (!response.ok) {
-                    throw new Error("Erro no envio.");
+                    throw new Error("NETWORK_ERROR");
                 }
 
-                // Success Handling
-                messageBox.style.display = 'block';
-                messageBox.style.backgroundColor = '#f1f8e9';
-                messageBox.style.color = '#33691e';
-                messageBox.style.border = '1px solid #dcedc8';
-                messageBox.innerText = 'A sua inscrição foi recebida com sucesso! Entraremos em contacto em breve.';
+                let result;
+                try {
+                    result = await response.json();
+                } catch (jsonError) {
+                    console.error('JSON Parse Error:', jsonError);
+                    throw new Error("INVALID_JSON_RESPONSE");
+                }
+
+                if (!result.ok) {
+                    throw new Error(result.error || "BACKEND_ERROR");
+                }
+
+                const successMsg = isContactForm
+                    ? "A sua mensagem foi enviada com sucesso! Responderemos em breve."
+                    : "A sua inscrição foi recebida com sucesso! Entraremos em contacto em breve.";
+
+                showMessage(messageBox, successMsg, 'success');
                 form.reset();
 
             } catch (error) {
                 console.error('Submission Error:', error);
 
-                // Error Handling
-                messageBox.style.display = 'block';
-                messageBox.style.backgroundColor = '#fff3f3';
-                messageBox.style.color = '#d32f2f';
-                messageBox.style.border = '1px solid #ffcdd2';
-
-                if (SCRIPT_URL === "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE") {
-                    messageBox.innerText = '[Modo Frontend]: O envio funcionou, mas o Backend (Google Script) ainda não foi ligado.';
+                if (error.message === "PLACEHOLDER_URL") {
+                    showMessage(
+                        messageBox,
+                        "O formulário está pronto, mas o sistema de envio ainda não foi configurado.",
+                        'error'
+                    );
+                } else if (error.message === "NETWORK_ERROR") {
+                    showMessage(
+                        messageBox,
+                        "Não foi possível contactar o servidor. Verifique a ligação e tente novamente.",
+                        'error'
+                    );
+                } else if (error.message === "INVALID_JSON_RESPONSE") {
+                    showMessage(
+                        messageBox,
+                        "O servidor respondeu num formato inesperado. Verifique a configuração do Apps Script.",
+                        'error'
+                    );
                 } else {
-                    messageBox.innerText = 'Ocorreu um erro ao enviar a inscrição. Por favor tente novamente ou contacte-nos por WhatsApp.';
+                    showMessage(
+                        messageBox,
+                        error.message || 'Ocorreu um erro ao enviar. Por favor tente novamente ou contacte-nos por WhatsApp.',
+                        'error'
+                    );
                 }
             } finally {
-                // Restore Button for this specific form
                 submitBtn.disabled = false;
                 submitBtn.innerText = originalBtnText;
             }
         });
     });
+
+    function showMessage(target, text, type) {
+        target.style.display = 'block';
+
+        if (type === 'success') {
+            target.style.backgroundColor = '#f1f8e9';
+            target.style.color = '#33691e';
+            target.style.border = '1px solid #dcedc8';
+        } else {
+            target.style.backgroundColor = '#fff3f3';
+            target.style.color = '#d32f2f';
+            target.style.border = '1px solid #ffcdd2';
+        }
+
+        target.innerText = text;
+    }
 });
