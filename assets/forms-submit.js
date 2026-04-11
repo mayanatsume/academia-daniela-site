@@ -13,7 +13,7 @@
  * - Course: full_name, email, whatsapp, course_name, privacy_consent
  * - Contact: full_name, email, phone, message
  *
- * TEST EMAIL: mayainatsume@gmail.com
+ * TEST EMAIL:academiadanielasilva@gmail.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
