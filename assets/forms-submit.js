@@ -68,28 +68,53 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('submitted_at', new Date().toISOString());
             formData.append('form_type', isContactForm ? 'contact' : 'course');
 
-            // Garante que a turma/data escolhida é enviada ao Apps Script
-            // mesmo que algum browser ou alteração no HTML não inclua o campo automaticamente.
+            // Garante que a turma/data escolhida e o nome do curso com turma são enviados ao Apps Script
             if (!isContactForm) {
                 const courseDateSelect =
                     form.querySelector('[name="course_date"]') ||
                     document.getElementById('course_date');
 
+                const courseNameInput =
+                    form.querySelector('[name="course_name"]') ||
+                    document.querySelector('[name="course_name"]');
+
                 if (courseDateSelect) {
                     const selectedCourseDateOption =
                         courseDateSelect.options[courseDateSelect.selectedIndex];
 
-                    formData.set('course_date', courseDateSelect.value || '');
-
-                    formData.set(
-                        'course_date_label',
+                    const courseDateValue = courseDateSelect.value || '';
+                    const courseDateLabel =
                         selectedCourseDateOption && selectedCourseDateOption.value
                             ? selectedCourseDateOption.text.trim()
-                            : ''
-                    );
+                            : '';
+
+                    let courseNameWithClass = courseNameInput ? courseNameInput.value : '';
+
+                    if (courseDateValue === '2026-05-31_2026-06-01') {
+                        courseNameWithClass = 'Limpeza de Pele — Turma 1';
+                    }
+
+                    if (courseDateValue === '2026-06-22_2026-06-23') {
+                        courseNameWithClass = 'Limpeza de Pele — Turma 2';
+                    }
+
+                    if (courseDateValue === '2026-05-23_2026-05-24') {
+                        courseNameWithClass = 'Maquilhagem Social – Nível 1 — Turma 1';
+                    }
+
+                    if (courseDateValue === '2026-06-29_2026-06-30') {
+                        courseNameWithClass = 'Maquilhagem Social – Nível 1 — Turma 2';
+                    }
+
+                    formData.set('course_date', courseDateValue);
+                    formData.set('course_date_label', courseDateLabel);
+                    formData.set('course_name', courseNameWithClass);
+
+                    if (courseNameInput) {
+                        courseNameInput.value = courseNameWithClass;
+                    }
                 }
             }
-
             try {
                 if (SCRIPT_URL === "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE") {
                     throw new Error("PLACEHOLDER_URL");
