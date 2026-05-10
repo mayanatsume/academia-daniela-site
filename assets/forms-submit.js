@@ -10,10 +10,10 @@
  *
  * PAYLOADS:
  * - Common: source_page, submitted_at, form_type (course|contact)
- * - Course: full_name, email, whatsapp, course_name, privacy_consent
+ * - Course: full_name, email, whatsapp, course_name, privacy_consent, course_date, course_date_label
  * - Contact: full_name, email, phone, message
  *
- * TEST EMAIL:academiadanielasilva@gmail.com
+ * TEST EMAIL: academiadanielasilva@gmail.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,6 +67,28 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('source_page', sourcePage);
             formData.append('submitted_at', new Date().toISOString());
             formData.append('form_type', isContactForm ? 'contact' : 'course');
+
+            // Garante que a turma/data escolhida é enviada ao Apps Script
+            // mesmo que algum browser ou alteração no HTML não inclua o campo automaticamente.
+            if (!isContactForm) {
+                const courseDateSelect =
+                    form.querySelector('[name="course_date"]') ||
+                    document.getElementById('course_date');
+
+                if (courseDateSelect) {
+                    const selectedCourseDateOption =
+                        courseDateSelect.options[courseDateSelect.selectedIndex];
+
+                    formData.set('course_date', courseDateSelect.value || '');
+
+                    formData.set(
+                        'course_date_label',
+                        selectedCourseDateOption && selectedCourseDateOption.value
+                            ? selectedCourseDateOption.text.trim()
+                            : ''
+                    );
+                }
+            }
 
             try {
                 if (SCRIPT_URL === "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE") {
