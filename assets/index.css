@@ -5,7 +5,7 @@
 /* base: o ::before usa variáveis que cada secção define */
 .hero-section::before,
 .section-about::before,
-.testimonials-grid::before {
+.testimonials-left::before {
     content: "";
     position: absolute;
     inset: var(--wm-inset, -80px);
@@ -22,13 +22,13 @@
 /* garante conteúdo acima do watermark */
 .hero-section,
 .section-about,
-.testimonials-grid {
+.testimonials-left {
     position: relative;
 }
 
 .hero-section>*,
 .section-about>*,
-.testimonials-grid>* {
+.testimonials-left>* {
     position: relative;
     z-index: 1;
 }
@@ -53,26 +53,12 @@
 }
 
 /* ----- TESTIMONIALS watermark (troca o ficheiro quando tiveres) ----- */
-.testimonials-grid {
+.testimonials-left {
     --wm-img: url("img/floral-watermark-testimonials.png");
-    --wm-size: 500px auto;
-    --wm-opacity: 0.14;
-    --wm-pos: left center;
-    --wm-inset: -110px;
-}
-
-/* garante conteúdo acima do watermark */
-.hero-section,
-.section-about,
-.testimonials-grid {
-    position: relative;
-}
-
-.hero-section>*,
-.section-about>*,
-.testimonials-grid>* {
-    position: relative;
-    z-index: 1;
+    --wm-size: 350px auto;
+    --wm-opacity: 0.08;
+    --wm-pos: center bottom;
+    --wm-inset: -20px;
 }
 
 /* =========================================
@@ -423,9 +409,15 @@
    ========================================= */
 .testimonials-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.testimonials-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .testimonial-slider {
@@ -622,7 +614,7 @@
     }
 
     /* TESTIMONIALS: corrigir posição (sem mudar o tamanho) */
-    .testimonials-grid {
+    .testimonials-left {
         --wm-pos: center top;
         /* atrás do título */
         /* se precisar subir mais: center -80px */
@@ -646,4 +638,51 @@
     text-align: center;
     width: 100%;
     display: block;
+}
+
+/* =========================================
+   DEBUG / AJUSTE FINAL — marca d'água testemunhos
+   Cola este bloco no FINAL do assets/comments.css
+   ========================================= */
+
+.testimonials-left {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* imagem decorativa dos testemunhos */
+.testimonials-left::before {
+    content: "" !important;
+    position: absolute !important;
+    display: block !important;
+
+    background-image: url("img/floral-watermark-testimonials.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+
+    width: 560px !important;
+    height: 560px !important;
+
+    /*
+      top menor/negativo = sobe
+      top maior = desce
+
+      right menor/negativo = vai mais para a direita
+      right maior/positivo = vai mais para a esquerda
+    */
+    top: -80px !important;
+    right: -90px !important;
+
+    opacity: 0.35 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+
+
+}
+
+.testimonials-header,
+.testimonials-list-container {
+    position: relative !important;
+    z-index: 2 !important;
 }

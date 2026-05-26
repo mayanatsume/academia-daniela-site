@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="assets/comments.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Favicon e Ícones -->
@@ -274,32 +275,73 @@
 
         <section class="section-padding">
             <div class="container testimonials-grid">
-                <div class="testimonials-header">
-                    <h2 class="section-title">O que as nossas clientes dizem sobre nós</h2>
+                <!-- COLUNA ESQUERDA -->
+                <div class="testimonials-left">
+                    <div class="testimonials-header">
+                        <h2 class="section-title">O que as nossas clientes dizem sobre nós</h2>
+                    </div>
+
+                    <!-- CARROSSEL DE TESTEMUNHOS -->
+                    <div class="testimonials-list-container">
+                        <div id="dynamic-testimonials-container"></div>
+                        <div id="fake-testimonials" class="testimonial-slider">
+                            <div class="testimonial-slide active">
+                                <div class="quote-icon">“</div>
+                                <p class="testimonial-text">O atendimento é impecável e os resultados superaram as minhas expectativas. Recomendo vivamente a todos!</p>
+                                <h4 class="testimonial-name">Maria Silva</h4>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="quote-icon">“</div>
+                                <p class="testimonial-text">Um espaço de paz e profissionalismo. Fiz o tratamento de laser e estou muito satisfeita com o resultado.</p>
+                                <h4 class="testimonial-name">Ana Oliveira</h4>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="quote-icon">“</div>
+                                <p class="testimonial-text">A melhor clínica de estética que já visitei. A equipa é maravilhosa e muito atenciosa.</p>
+                                <h4 class="testimonial-name">Beatriz Costa</h4>
+                            </div>
+                            <div class="slider-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-slider">
-                    <div class="testimonial-slide active">
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">O atendimento é impecável e os resultados superaram as minhas
-                            expectativas. Recomendo vivamente a todos!</p>
-                        <h4 class="testimonial-name">Maria Silva</h4>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">Um espaço de paz e profissionalismo. Fiz o tratamento de laser e
-                            estou muito satisfeita com o resultado.</p>
-                        <h4 class="testimonial-name">Ana Oliveira</h4>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">A melhor clínica de estética que já visitei. A equipa é maravilhosa
-                            e muito atenciosa.</p>
-                        <h4 class="testimonial-name">Beatriz Costa</h4>
-                    </div>
-                    <div class="slider-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+
+                <!-- COLUNA DIREITA -->
+                <div class="testimonials-right">
+                    <!-- FORMULÁRIO -->
+                    <div class="comment-form-container">
+                        <h3 style="font-size: 20px; margin-bottom: 10px;">Deixe o seu testemunho</h3>
+                        <p class="form-subtitle">A sua opinião é muito importante para nós.</p>
+                        <form id="leave-comment-form">
+                            <div class="field">
+                                <input type="text" id="comment_name" placeholder="O seu nome" required>
+                            </div>
+                            <div class="field">
+                                <select id="comment_course" style="width: 100%; padding: 14px 20px; border: 1px solid rgba(0,0,0,0.1); border-radius: 999px; font-family: inherit; font-size: 14px; outline: none; margin-bottom: 15px; color: var(--text);">
+                                    <option value="Geral" selected>Avaliação Geral</option>
+                                    <optgroup label="Cursos">
+                                        <option value="Limpeza de Pele">Limpeza de Pele</option>
+                                        <option value="Maquilhagem Social">Maquilhagem Social</option>
+                                        <option value="Lifting de Pestanas">Lifting de Pestanas</option>
+                                        <option value="Jato de Plasma">Jato de Plasma</option>
+                                        <option value="HIFU">HIFU</option>
+                                    </optgroup>
+                                    <optgroup label="Estética">
+                                        <option value="Estética Facial">Estética Facial</option>
+                                        <option value="Estética Corporal">Estética Corporal</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <textarea id="comment_text" placeholder="Como foi a sua experiência connosco?" required maxlength="500"></textarea>
+                                <span class="char-counter" id="comment-char-count">0/500</span>
+                            </div>
+                            <button type="submit" class="btn btn-full">ENVIAR COMENTÁRIO</button>
+                            <div id="comment-status-msg"></div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -364,6 +406,7 @@
 
     <script src="assets/app.js" defer></script>
     <script src="assets/cookies.js" defer></script>
+    <script src="assets/comments.js" defer></script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/course.css">
+    <link rel="stylesheet" href="assets/comments.css">
 
     <!-- Favicon e Ícones -->
     <link rel="icon" href="assets/img/favicon/favicon.ico" sizes="any">
@@ -32,23 +33,26 @@
     -->
 
     <!-- SEO Meta Tags -->
-        
-    
+
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Formação certificada em estética. Inscreva-se no Curso de Jato de Plasma em Cantanhede e complemente a oferta de tratamentos estéticos e corporais.">
+    <meta name="description"
+        content="Formação certificada em estética. Inscreva-se no Curso de Jato de Plasma em Cantanhede e complemente a oferta de tratamentos estéticos e corporais.">
     <link rel="canonical" href="https://academiadanielasilva.pt/course-plasma.html">
 
     <!-- Open Graph / Meta -->
     <meta property="og:title" content="Curso de Jato de Plasma em Cantanhede | Academia Daniela Silva">
-    <meta property="og:description" content="Formação certificada em estética. Inscreva-se no Curso de Jato de Plasma em Cantanhede e complemente a oferta de tratamentos estéticos e corporais.">
+    <meta property="og:description"
+        content="Formação certificada em estética. Inscreva-se no Curso de Jato de Plasma em Cantanhede e complemente a oferta de tratamentos estéticos e corporais.">
     <meta property="og:url" content="https://academiadanielasilva.pt/course-plasma.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://academiadanielasilva.pt/assets/img/hero.png">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Curso de Jato de Plasma em Cantanhede | Academia Daniela Silva">
-    <meta name="twitter:description" content="Formação certificada em estética. Inscreva-se no Curso de Jato de Plasma em Cantanhede e complemente a oferta de tratamentos estéticos e corporais.">
+    <meta name="twitter:description"
+        content="Formação certificada em estética. Inscreva-se no Curso de Jato de Plasma em Cantanhede e complemente a oferta de tratamentos estéticos e corporais.">
     <meta name="twitter:image" content="https://academiadanielasilva.pt/assets/img/hero.png">
 
     <!-- Correção Header Mobile (Email Icon) -->
@@ -61,13 +65,17 @@
                 padding: 0 !important;
                 width: auto !important;
             }
+
             .header-right .contact-link {
                 font-size: 0 !important;
             }
+
             .header-right .contact-link .contact-ico {
                 font-size: 24px !important;
-                color: #d4af37 !important; /* Dourado da marca */
-                margin-right: 5px; /* Espaço pro hambúrguer */
+                color: #d4af37 !important;
+                /* Dourado da marca */
+                margin-right: 5px;
+                /* Espaço pro hambúrguer */
             }
         }
     </style>
@@ -189,8 +197,12 @@
                             <div class="field">
                                 <input type="text" name="full_name" placeholder="Nome Completo" required>
                                 <input type="email" name="email" placeholder="E-mail" required>
-                                <label for="nif" style="display: block; text-align: left; font-size: 13px; color: var(--text-light); margin-bottom: 5px; margin-top: 10px;">NIF (para faturação)</label>
-                                <input type="text" id="nif" name="nif" placeholder="NIF" pattern="\d{9}" title="O NIF deve conter exatamente 9 números" required style="margin-bottom: 10px;">
+                                <label for="nif"
+                                    style="display: block; text-align: left; font-size: 13px; color: var(--text-light); margin-bottom: 5px; margin-top: 10px;">NIF
+                                    (para faturação)</label>
+                                <input type="text" id="nif" name="nif" placeholder="NIF" pattern="\d{9}"
+                                    title="O NIF deve conter exatamente 9 números" required
+                                    style="margin-bottom: 10px;">
                                 <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
                                 <input type="hidden" name="course_name" value="Curso Jato de Plasma">
 
@@ -252,7 +264,7 @@
                         <span class="info-strip__ico"><i class="fa-regular fa-calendar"></i></span>
                         <div>
                             <h4>Próximas datas</h4>
-                            <p>Dia 11 de Maio</p>
+                            <p>Dia 27 de Julho</p>
                         </div>
                     </div>
 
@@ -546,6 +558,35 @@
                 </div>
             </div>
         </section>
+        <section class="course-comments-section">
+            <div class="course-wrap">
+                <h2 class="section-title text-center">Testemunhos e Avaliações</h2>
+                <div class="comments-grid">
+                    <div class="comments-list-container">
+                        <h3>O que dizem os nossos alunos</h3>
+                        <div id="course-comments-list">
+                            <p class="loading-comments">A carregar comentários...</p>
+                        </div>
+                    </div>
+                    <div class="comment-form-container">
+                        <h3>Deixe o seu testemunho</h3>
+                        <p class="form-subtitle">A sua opinião é muito importante para nós e para futuros alunos.</p>
+                        <form id="leave-comment-form">
+                            <div class="field">
+                                <input type="text" id="comment_name" placeholder="O seu nome" required>
+                            </div>
+                            <div class="field">
+                                <textarea id="comment_text" placeholder="Como foi a sua experiência com este curso?"
+                                    required maxlength="500"></textarea>
+                                <span class="char-counter" id="comment-char-count">0/500</span>
+                            </div>
+                            <button type="submit" class="btn btn-full">ENVIAR COMENTÁRIO</button>
+                            <div id="comment-status-msg"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -601,6 +642,7 @@
     <script src="assets/app.js" defer></script>
     <script src="assets/cookies.js" defer></script>
     <script src="assets/forms-submit.js"></script>
+    <script src="assets/comments.js" defer></script>
 </body>
 
 </html>

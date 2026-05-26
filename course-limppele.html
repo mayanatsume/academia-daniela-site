@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/course.css">
+    <link rel="stylesheet" href="assets/comments.css">
 
     <!-- Favicon e Ícones -->
     <link rel="icon" href="assets/img/favicon/favicon.ico" sizes="any">
@@ -591,6 +592,34 @@
                 </div>
             </div>
         </section>
+        <section class="course-comments-section">
+            <div class="course-wrap">
+                <h2 class="section-title text-center">Testemunhos e Avaliações</h2>
+                <div class="comments-grid">
+                    <div class="comments-list-container">
+                        <h3>O que dizem os nossos alunos</h3>
+                        <div id="course-comments-list">
+                            <p class="loading-comments">A carregar comentários...</p>
+                        </div>
+                    </div>
+                    <div class="comment-form-container">
+                        <h3>Deixe o seu testemunho</h3>
+                        <p class="form-subtitle">A sua opinião é muito importante para nós e para futuros alunos.</p>
+                        <form id="leave-comment-form">
+                            <div class="field">
+                                <input type="text" id="comment_name" placeholder="O seu nome" required>
+                            </div>
+                            <div class="field">
+                                <textarea id="comment_text" placeholder="Como foi a sua experiência com este curso?" required maxlength="500"></textarea>
+                                <span class="char-counter" id="comment-char-count">0/500</span>
+                            </div>
+                            <button type="submit" class="btn btn-full">ENVIAR COMENTÁRIO</button>
+                            <div id="comment-status-msg"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -674,6 +703,7 @@
     <script src="assets/app.js" defer></script>
     <script src="assets/cookies.js" defer></script>
     <script src="assets/forms-submit.js"></script>
+    <script src="assets/comments.js" defer></script>
 </body>
 
 </html>
