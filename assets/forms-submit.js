@@ -70,25 +70,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Garante que a turma/data escolhida e o nome do curso com turma são enviados ao Apps Script
             if (!isContactForm) {
-                const courseDateSelect =
+                const courseDateField =
                     form.querySelector('[name="course_date"]') ||
                     document.getElementById('course_date');
+
+                const courseDateLabelField =
+                    form.querySelector('[name="course_date_label"]') ||
+                    document.getElementById('course_date_label');
 
                 const courseNameInput =
                     form.querySelector('[name="course_name"]') ||
                     document.querySelector('[name="course_name"]');
 
-                if (courseDateSelect) {
-                    const selectedCourseDateOption =
-                        courseDateSelect.options[courseDateSelect.selectedIndex];
+                if (courseDateField) {
+                    const courseDateValue = courseDateField.value || '';
 
-                    const courseDateValue = courseDateSelect.value || '';
-                    const courseDateLabel =
-                        selectedCourseDateOption && selectedCourseDateOption.value
-                            ? selectedCourseDateOption.text.trim()
-                            : '';
+                    let courseDateLabel = courseDateLabelField
+                        ? courseDateLabelField.value
+                        : '';
 
-                    let courseNameWithClass = courseNameInput ? courseNameInput.value : '';
+                    /*
+                     * Nas páginas antigas, course_date pode ser um select.
+                     * Na nova página de Nanoblanding, é um input hidden.
+                     */
+                    if (courseDateField.tagName === 'SELECT') {
+                        const selectedCourseDateOption =
+                            courseDateField.options[courseDateField.selectedIndex];
+
+                        courseDateLabel =
+                            selectedCourseDateOption && selectedCourseDateOption.value
+                                ? selectedCourseDateOption.text.trim()
+                                : '';
+                    }
+
+                    let courseNameWithClass =
+                        courseNameInput ? courseNameInput.value : '';
 
                     if (courseDateValue === '2026-05-31_2026-06-01') {
                         courseNameWithClass = 'Limpeza de Pele — Turma 1';
