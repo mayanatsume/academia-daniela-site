@@ -8,13 +8,13 @@ const COMMENTS_ENDPOINT =
 
 const HOME_EXTRA_SLIDES = [
     {
-        nome: 'Academia Daniela Silva',
+        nome: 'Maria Santos',
         curso: 'Formação Profissional',
         comentario:
             'Formações práticas, acompanhamento próximo e foco em resultados reais para evoluir com segurança na área da estética.'
     },
     {
-        nome: 'Academia Daniela Silva',
+        nome: 'Marta Alves',
         curso: 'Estética Profissional',
         comentario:
             'Aprenda técnicas profissionais com confiança, cuidado e atenção aos detalhes em cada etapa da sua formação.'
