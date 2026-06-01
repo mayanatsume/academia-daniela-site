@@ -359,7 +359,7 @@
 
 .trainer-photo img {
     width: 100%;
-    height: 440px;
+    height: 340px;
     object-fit: cover;
 }
 
@@ -374,7 +374,7 @@
     }
 
     .trainer-photo img {
-        height: 320px;
+        height: 280px;
     }
 }
 
@@ -1091,10 +1091,17 @@
     }
 }
 
-.trainer-photo img {
+.course-page .trainer-photo img {
     width: 100%;
-    height: 680px;
+    height: 460px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 20%;
     border-radius: 28px;
+}
+
+@media (max-width: 900px) {
+    .course-page .trainer-photo img {
+        height: 380px;
+        object-position: center 20%;
+    }
 }

@@ -1,5 +1,12 @@
 /**
  * Estilos para o Sistema de Comentários
+ * Academia Daniela Silva
+ *
+ * Correções desta versão:
+ * - comentários das páginas de curso em carrossel;
+ * - apenas um comentário visível por vez;
+ * - altura estável, sem cartões empilhados;
+ * - pontos de navegação e transição suave.
  */
 
 /* -------------------------------------
@@ -28,6 +35,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
+    align-items: stretch;
 }
 
 @media (min-width: 992px) {
@@ -36,12 +44,13 @@
     }
 }
 
-/* Lista de Comentários */
+/* Lista de comentários */
 .comments-list-container {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    min-width: 0;
 }
 
 .comments-list-container h3 {
@@ -53,40 +62,74 @@
     padding-bottom: 15px;
 }
 
-.loading-comments, .no-comments-msg {
+.loading-comments,
+.no-comments-msg {
     color: var(--text-light);
     font-style: italic;
     text-align: center;
     padding: 20px 0;
 }
 
-.comment-box {
-    padding: 20px 0;
-    border-bottom: 1px solid #f0f0f0;
+/* Carrossel dos comentários de cada curso */
+.course-comments-slider {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    min-height: 220px;
 }
 
-.comment-box:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.comment-box {
+    position: relative;
+    padding: 25px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.course-comment-slide {
+    grid-column: 1;
+    grid-row: 1;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(14px);
+    transition: opacity .45s ease, transform .45s ease, visibility .45s ease;
+}
+
+.course-comment-slide.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.comment-box::before {
+    content: "“";
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-family: var(--font-heading);
+    font-size: 60px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.15;
 }
 
 .comment-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .comment-header h4 {
     margin: 0;
     font-family: var(--font-heading);
     color: var(--text-main);
-    font-size: 18px;
-}
-
-.comment-date {
-    font-size: 12px;
-    color: var(--text-light);
+    font-size: 19px;
+    font-weight: 700;
 }
 
 .comment-body {
@@ -94,11 +137,38 @@
     color: var(--text-light);
     line-height: 1.6;
     font-size: 15px;
+    overflow-wrap: anywhere;
 }
 
-/* Formulário de Comentários */
+/* Pontos do carrossel nas páginas de curso */
+.course-comments-dots {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.course-comments-dots .dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.course-comments-dots .dot.active {
+    width: 30px;
+    background: var(--gold);
+}
+
+/* Formulário de comentários */
 .comment-form-container {
-    background: #140b09; /* Tom escuro da marca */
+    background: #140b09;
     padding: 30px;
     border-radius: 12px;
     color: #fff;
@@ -177,4 +247,23 @@
     background: rgba(244, 67, 54, 0.1);
     color: #F44336;
     border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+@media (max-width: 700px) {
+    .course-comments-section {
+        padding: 38px 0;
+    }
+
+    .comments-grid {
+        gap: 22px;
+    }
+
+    .comments-list-container,
+    .comment-form-container {
+        padding: 20px;
+    }
+
+    .comment-box {
+        padding: 20px;
+    }
 }
